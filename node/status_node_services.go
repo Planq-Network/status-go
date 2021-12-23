@@ -67,7 +67,13 @@ func (b *StatusNode) initServices(config *params.NodeConfig) error {
 	services = append(services, b.statusPublicService())
 	services = append(services, b.ensService())
 	services = appendIf(config.EnableNTPSync, services, b.timeSource())
-	services = appendIf(b.appDB != nil && b.multiaccountsDB != nil, services, b.accountsService(accountsFeed))
+
+	accService, err := b.accountsService(accountsFeed)
+	if err != nil {
+		return err
+	}
+	services = appendIf(b.appDB != nil && b.multiaccountsDB != nil, services, accService)
+
 	services = appendIf(config.BrowsersConfig.Enabled, services, b.browsersService())
 	services = appendIf(config.PermissionsConfig.Enabled, services, b.permissionsService())
 	services = appendIf(config.MailserversConfig.Enabled, services, b.mailserversService())
@@ -115,7 +121,11 @@ func (b *StatusNode) initServices(config *params.NodeConfig) error {
 	}
 
 	// We ignore for now local notifications flag as users who are upgrading have no mean to enable it
-	services = append(services, b.localNotificationsService(config.NetworkID))
+	lns, err := b.localNotificationsService(config.NetworkID)
+	if err != nil {
+		return err
+	}
+	services = append(services, lns)
 
 	b.peerSrvc.SetDiscoverer(b)
 
@@ -342,10 +352,14 @@ func (b *StatusNode) rpcStatsService() *rpcstats.Service {
 	return b.rpcStatsSrvc
 }
 
-func (b *StatusNode) accountsService(accountsFeed *event.Feed) *accountssvc.Service {
+func (b *StatusNode) accountsService(accountsFeed *event.Feed) (*accountssvc.Service, error) {
 	if b.accountsSrvc == nil {
+		accs, err := accounts.NewDB(b.appDB)
+		if err != nil {
+			return nil, err
+		}
 		b.accountsSrvc = accountssvc.NewService(
-			accounts.NewDB(b.appDB),
+			accs,
 			b.multiaccountsDB,
 			b.gethAccountManager,
 			b.config,
@@ -353,7 +367,7 @@ func (b *StatusNode) accountsService(accountsFeed *event.Feed) *accountssvc.Serv
 		)
 	}
 
-	return b.accountsSrvc
+	return b.accountsSrvc, nil
 }
 
 func (b *StatusNode) browsersService() *browsers.Service {
@@ -413,11 +427,15 @@ func (b *StatusNode) walletService(accountsFeed *event.Feed) common.StatusServic
 	return b.walletSrvc
 }
 
-func (b *StatusNode) localNotificationsService(network uint64) *localnotifications.Service {
+func (b *StatusNode) localNotificationsService(network uint64) (*localnotifications.Service, error) {
+	var err error
 	if b.localNotificationsSrvc == nil {
-		b.localNotificationsSrvc = localnotifications.NewService(b.appDB, network)
+		b.localNotificationsSrvc, err = localnotifications.NewService(b.appDB, network)
+		if err != nil {
+			return nil, err
+		}
 	}
-	return b.localNotificationsSrvc
+	return b.localNotificationsSrvc, nil
 }
 
 func (b *StatusNode) peerService() *peer.Service {
