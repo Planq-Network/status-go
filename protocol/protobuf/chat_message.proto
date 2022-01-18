@@ -88,6 +88,10 @@ message ChatMessage {
   // Grant for community chat messages
   bytes grant = 13;
 
+  ContactRequestSignature sent_contact_request_signature = 14;
+  ContactRequestSignature received_contact_request_signature = 15;
+  bool contact_message = 16;
+
   enum ContentType {
     UNKNOWN_CONTENT_TYPE = 0;
     TEXT_PLAIN = 1;
@@ -103,4 +107,9 @@ message ChatMessage {
     // Only local
     SYSTEM_MESSAGE_GAP = 10;
   }
+}
+
+message ContactRequestSignature {
+  bytes signature = 1;
+  uint64 timestamp = 2;
 }
