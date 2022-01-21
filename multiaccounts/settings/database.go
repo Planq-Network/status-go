@@ -3,7 +3,9 @@ package settings
 import (
 	"context"
 	"database/sql"
+	"encoding/json"
 	"fmt"
+	"github.com/status-im/status-go/eth-node/types"
 	"sync"
 
 	"github.com/status-im/status-go/appdatabase"
@@ -198,12 +200,12 @@ func (db *Database) SaveSyncSetting(setting SettingField, value interface{}, clo
 		return errors.ErrNewClockOlderThanCurrent
 	}
 
-	err = db.saveSetting(setting, value)
+	err = db.SetSettingLastSynced(setting.GetDBName(), clock)
 	if err != nil {
 		return err
 	}
 
-	return db.SetSettingLastSynced(setting.GetDBName(), clock)
+	return db.saveSetting(setting, value)
 }
 
 func (db *Database) GetSettings() (Settings, error) {
@@ -275,8 +277,6 @@ func (db *Database) GetSettings() (Settings, error) {
 
 	return s, err
 }
-
-
 
 func (db *Database) GetNotificationsEnabled() (bool, error) {
 	var result bool
@@ -376,8 +376,6 @@ func (db *Database) GetLatestDerivedPath() (uint, error) {
 	err := db.db.QueryRow("SELECT latest_derived_path FROM settings WHERE synthetic_id = 'id'").Scan(&result)
 	return result, err
 }
-
-
 
 func (db *Database) GetCurrentStatus(status interface{}) error {
 	err := db.db.QueryRow("SELECT current_user_status FROM settings WHERE synthetic_id = 'id'").Scan(&sqlite.JSONBlob{Data: &status})
