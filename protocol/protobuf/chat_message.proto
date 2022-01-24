@@ -106,6 +106,7 @@ message ChatMessage {
     COMMUNITY = 9;
     // Only local
     SYSTEM_MESSAGE_GAP = 10;
+    CONTACT_REQUEST = 11;
   }
 }
 
