@@ -5,10 +5,10 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
-	"github.com/status-im/status-go/eth-node/types"
 	"sync"
 
 	"github.com/status-im/status-go/appdatabase"
+	"github.com/status-im/status-go/eth-node/types"
 	"github.com/status-im/status-go/multiaccounts/errors"
 	"github.com/status-im/status-go/nodecfg"
 	"github.com/status-im/status-go/params"
@@ -192,7 +192,7 @@ func (db *Database) SaveSetting(setting string, value interface{}) error {
 
 // SaveSyncSetting stores setting data from a sync protobuf source
 func (db *Database) SaveSyncSetting(setting SettingField, value interface{}, clock uint64) error {
-	ls, err := db.GetSettingLastSynced(setting.GetDBName())
+	ls, err := db.GetSettingLastSynced(setting)
 	if err != nil {
 		return err
 	}
@@ -200,7 +200,7 @@ func (db *Database) SaveSyncSetting(setting SettingField, value interface{}, clo
 		return errors.ErrNewClockOlderThanCurrent
 	}
 
-	err = db.SetSettingLastSynced(setting.GetDBName(), clock)
+	err = db.setSettingLastSynced(setting, clock)
 	if err != nil {
 		return err
 	}
@@ -454,11 +454,11 @@ func (db *Database) ENSName() (string, error) {
 	return "", err
 }
 
-func (db *Database) GetSettingLastSynced(column string) (uint64, error) {
+func (db *Database) GetSettingLastSynced(setting SettingField) (uint64, error) {
 	var result uint64
 
 	query := "SELECT %s FROM settings_sync_clock WHERE synthetic_id = 'id'"
-	query = fmt.Sprintf(query, column)
+	query = fmt.Sprintf(query, setting.GetDBName())
 
 	err := db.db.QueryRow(query).Scan(&result)
 	if err != nil {
@@ -468,9 +468,9 @@ func (db *Database) GetSettingLastSynced(column string) (uint64, error) {
 	return result, nil
 }
 
-func (db *Database) SetSettingLastSynced(column string, clock uint64) error {
+func (db *Database) setSettingLastSynced(setting SettingField, clock uint64) error {
 	query := "UPDATE settings_sync_clock SET %s = ? WHERE synthetic_id = 'id' AND %s < ?"
-	query = fmt.Sprintf(query, column, column)
+	query = fmt.Sprintf(query, setting.GetDBName(), setting.GetDBName())
 
 	_, err := db.db.Exec(query, clock, clock)
 	return err
