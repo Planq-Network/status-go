@@ -440,6 +440,7 @@ func (s *MessengerCommunitiesSuite) TestPostToCommunityChat() {
 	s.Require().Len(response.Communities(), 1)
 
 	community := response.Communities()[0]
+	s.logger.Info("### created community with ID: ", zap.Any("ID string", community.IDString()), zap.Any("ID", types.EncodeHex(community.ID())), zap.Any("bytes ID", community.ID()))
 
 	// Create chat
 	orgChat := &protobuf.CommunityChat{
@@ -489,7 +490,21 @@ func (s *MessengerCommunitiesSuite) TestPostToCommunityChat() {
 	s.Require().Len(communities, 2)
 	s.Require().Len(response.Communities(), 1)
 
+	communityId := response.Communities()[0].ID()
+	s.Require().Equal(communityId, community.ID())
+	keyCnt, err := s.alice.encryptor.GetHRKeyCount()
+	if err != nil {
+		s.logger.Info("### GetHRKeyCount err", zap.Any("err", err))
+	}
+	currentKey, groupId, err := s.alice.encryptor.GetHRKey()
+	if err != nil {
+		s.logger.Info("### currentKey err", zap.Any("err", err))
+	}
+
+	s.logger.Info("### currentKey", zap.Any("keyCnt", keyCnt), zap.Any("communityId", communityId), zap.Any("currentKey", currentKey), zap.Any("groupId", types.EncodeHex(groupId)))
 	ctx := context.Background()
+	stringified := string(groupId)
+	s.logger.Info("### casting", zap.Any("stringified", stringified), zap.Any("back to bytes", []byte(stringified)))
 
 	// We join the org
 	response, err = s.alice.JoinCommunity(ctx, community.ID())
@@ -504,11 +519,13 @@ func (s *MessengerCommunitiesSuite) TestPostToCommunityChat() {
 	inputMessage.ChatId = chatID
 	inputMessage.ContentType = protobuf.ChatMessage_TEXT_PLAIN
 	inputMessage.Text = "some text"
+	s.logger.Info("### inputMessage.text", zap.Any("text", []byte(inputMessage.Text)))
 
 	_, err = s.alice.SendChatMessage(ctx, inputMessage)
 	s.Require().NoError(err)
 
 	// Pull message and make sure org is received
+	s.logger.Info("### before retrieveAll")
 	err = tt.RetryWithBackOff(func() error {
 		response, err = s.bob.RetrieveAll()
 		if err != nil {

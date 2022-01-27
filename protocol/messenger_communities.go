@@ -260,7 +260,7 @@ func (m *Messenger) RequestToJoinCommunity(request *requests.RequestToJoinCommun
 		SkipEncryption: true,
 		MessageType:    protobuf.ApplicationMetadataMessage_COMMUNITY_REQUEST_TO_JOIN,
 	}
-	_, err = m.sender.SendCommunityMessage(context.Background(), community.PublicKey(), rawMessage)
+	_, err = m.sender.SendCommunityMessage(context.Background(), community.ID(), rawMessage)
 	if err != nil {
 		return nil, err
 	}
@@ -558,6 +558,9 @@ func (m *Messenger) CreateCommunity(request *requests.CreateCommunity) (*Messeng
 		return nil, err
 	}
 
+	// TODO Init hash ratchet for community
+	m.encryptor.GenerateHashRatchetKey(community.ID())
+
 	response := &MessengerResponse{}
 	response.AddCommunity(community)
 	err = m.syncCommunity(context.Background(), community)
@@ -600,6 +603,9 @@ func (m *Messenger) ImportCommunity(ctx context.Context, key *ecdsa.PrivateKey) 
 		return nil, err
 	}
 
+	// TODO Init hash ratchet for community
+	m.encryptor.GenerateHashRatchetKey(community.ID())
+
 	//request info already stored on mailserver, but its success is not crucial
 	// for import
 	_, _ = m.RequestCommunityInfoFromMailserver(community.IDString())
@@ -626,6 +632,11 @@ func (m *Messenger) InviteUsersToCommunity(request *requests.InviteUsersToCommun
 	if err != nil {
 		return nil, err
 	}
+
+	if err != nil {
+		return nil, err
+	}
+
 	for _, pkBytes := range request.Users {
 		publicKey, err := common.HexToPubkey(pkBytes.String())
 		if err != nil {
@@ -647,6 +658,8 @@ func (m *Messenger) InviteUsersToCommunity(request *requests.InviteUsersToCommun
 			return nil, err
 		}
 	}
+
+	m.SendKeyExchangeMessage(community.ID(), publicKeys)
 
 	community, err = m.communitiesManager.InviteUsersToCommunity(request.CommunityID, publicKeys)
 	if err != nil {
@@ -729,8 +742,30 @@ func (m *Messenger) RemoveUserFromCommunity(id types.HexBytes, pkString string) 
 	return response, nil
 }
 
+// TODO
+func (m *Messenger) SendKeyExchangeMessage(communityId []byte, pubkeys []*ecdsa.PublicKey) error {
+	rawMessage := common.RawMessage{
+		SkipEncryption: false,
+		Recipients:     pubkeys,
+		MessageType:    protobuf.ApplicationMetadataMessage_GROUP_KEY_EXCHANGE_MESSAGE,
+	}
+	_, err := m.sender.SendCommunityMessage(context.Background(), communityId, rawMessage)
+
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *Messenger) BanUserFromCommunity(request *requests.BanUserFromCommunity) (*MessengerResponse, error) {
 	community, err := m.communitiesManager.BanUserFromCommunity(request)
+	if err != nil {
+		return nil, err
+	}
+
+	// TODO generate new encryption key
+	//communityKeyId, err := m.encryptor.GenerateHashRatchetKey(community.ID())
+	err = m.SendKeyExchangeMessage(community.ID(), community.GetMemberPubkeys())
 	if err != nil {
 		return nil, err
 	}

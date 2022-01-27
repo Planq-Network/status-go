@@ -330,7 +330,12 @@ func (s *encryptor) DecryptPayload(myIdentityKey *ecdsa.PrivateKey, theirIdentit
 
 	// Try Hash Ratchet
 	if header := msg.GetHRHeader(); header != nil {
-		return s.decryptWithHR([]byte(header.GroupId), header.KeyId, header.SeqNo, payload)
+
+		s.logger.Info("### decryptPayload with HR")
+		decryptedPayload, err := s.decryptWithHR([]byte(header.GroupId), header.KeyId, header.SeqNo, payload)
+
+		s.logger.Info("### decryptPayload with HR 2", zap.Any("payload", decryptedPayload))
+		return decryptedPayload, err
 	}
 	return nil, errors.New("no key specified")
 }
@@ -600,7 +605,7 @@ func (s *encryptor) EncryptPayload(theirIdentityKey *ecdsa.PublicKey, myIdentity
 	return response, targetedInstallations, nil
 }
 
-func (s *encryptor) getNextHashRatchetKeyID(groupID string) (uint32, error) {
+func (s *encryptor) getNextHashRatchetKeyID(groupID []byte) (uint32, error) {
 	latestKeyID, err := s.persistence.GetCurrentKeyForGroup(groupID)
 	if err != nil {
 		return 0, err
@@ -624,12 +629,12 @@ func (s *encryptor) GenerateHashRatchetKey(groupID []byte) (uint32, error) {
 	}
 	hrKeyBytes := crypto.FromECDSA(hrKey)
 
-	keyID, err := s.getNextHashRatchetKeyID(string(groupID))
+	keyID, err := s.getNextHashRatchetKeyID(groupID)
 	if err != nil {
 		return 0, err
 	}
 
-	err = s.persistence.SaveHashRatchetKey(string(groupID), keyID, hrKeyBytes)
+	err = s.persistence.SaveHashRatchetKey(groupID, keyID, hrKeyBytes)
 
 	return keyID, err
 }
@@ -681,7 +686,7 @@ func (s *encryptor) encryptWithHR(groupID []byte, keyID uint32, payload []byte) 
 	}
 	dmp := &EncryptedMessageProtocol{
 		HRHeader: &HRHeader{
-			GroupId: string(groupID),
+			GroupId: groupID,
 			KeyId:   keyID,
 			SeqNo:   newSeqNo,
 		},
@@ -691,11 +696,16 @@ func (s *encryptor) encryptWithHR(groupID []byte, keyID uint32, payload []byte) 
 }
 
 func (s *encryptor) decryptWithHR(groupID []byte, keyID uint32, seqNo uint32, payload []byte) ([]byte, error) {
+	logger := s.logger.With(
+		zap.String("site", "decryptWithHR"),
+		zap.Any("group-id", groupID),
+		zap.Any("key-id", keyID))
 
 	hrCache, err := s.persistence.GetHashRatchetKeyByID(groupID, keyID, seqNo)
 	if err != nil {
 		return nil, err
 	}
+	logger.Info("### decryptWithHR", zap.Any("hrCache", hrCache), zap.Any("seqNo", seqNo))
 
 	// Handle mesages with seqNo less than the one in db
 	// 1. Check cache. If present for a particular seqNo, all good
@@ -726,5 +736,6 @@ func (s *encryptor) decryptWithHR(groupID []byte, keyID uint32, seqNo uint32, pa
 
 	decryptedPayload, err := crypto.DecryptSymmetric(hash, payload)
 
+	logger.Info("### decryptWithHR", zap.String("decryptedPayload", string(decryptedPayload)))
 	return decryptedPayload, err
 }

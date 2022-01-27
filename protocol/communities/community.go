@@ -262,6 +262,20 @@ func (o *Community) MembersCount() int {
 	return 0
 }
 
+func (o *Community) GetMemberPubkeys() []*ecdsa.PublicKey {
+	if o != nil &&
+		o.config != nil &&
+		o.config.CommunityDescription != nil {
+		pubkeys := make([]*ecdsa.PublicKey, len(o.config.CommunityDescription.Members))
+		i := 0
+		for hex, _ := range o.config.CommunityDescription.Members {
+			pubkeys[i], _ = common.HexToPubkey(hex)
+			i++
+		}
+		return pubkeys
+	}
+	return nil
+}
 func (o *Community) initialize() {
 	if o.config.CommunityDescription == nil {
 		o.config.CommunityDescription = &protobuf.CommunityDescription{}

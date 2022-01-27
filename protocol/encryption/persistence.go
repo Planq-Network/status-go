@@ -729,7 +729,7 @@ func (s *sqliteSessionStorage) Load(id []byte) (*dr.State, error) {
 }
 
 type HRCache struct {
-	GroupID string
+	GroupID []byte
 	KeyID   uint32
 	Key     []byte
 	Hash    []byte
@@ -793,7 +793,7 @@ func (s *sqlitePersistence) GetHashRatchetKeyByID(groupID []byte, keyID uint32, 
 // GetCurrentKeyIDForGroup retrieves a key ID for given group ID
 // (with an assumption that key ids are shared in the group, and
 // at any given time there is a single key used)
-func (s *sqlitePersistence) GetCurrentKeyForGroup(groupID string) (uint32, error) {
+func (s *sqlitePersistence) GetCurrentKeyForGroup(groupID []byte) (uint32, error) {
 
 	stmt, err := s.DB.Prepare(`SELECT key_id
 				   FROM hash_ratchet_encryption
@@ -804,7 +804,7 @@ func (s *sqlitePersistence) GetCurrentKeyForGroup(groupID string) (uint32, error
 	defer stmt.Close()
 
 	var keyID uint32
-	err = stmt.QueryRow([]byte(groupID)).Scan(&keyID)
+	err = stmt.QueryRow(groupID).Scan(&keyID)
 
 	switch err {
 	case sql.ErrNoRows:
@@ -838,7 +838,7 @@ func (s *sqlitePersistence) SaveHashRatchetKeyHash(
 
 // SaveHashRatchetKey saves a hash ratchet key
 func (s *sqlitePersistence) SaveHashRatchetKey(
-	groupID string,
+	groupID []byte,
 	keyID uint32,
 	key []byte,
 ) error {
@@ -849,7 +849,44 @@ func (s *sqlitePersistence) SaveHashRatchetKey(
 	}
 	defer stmt.Close()
 
-	_, err = stmt.Exec([]byte(groupID), keyID, key)
+	_, err = stmt.Exec(groupID, keyID, key)
 
 	return err
+}
+
+func (s *sqlitePersistence) GetHRKeyCount() (uint, error) {
+	stmt, err := s.DB.Prepare(`SELECT count(key) FROM hash_ratchet_encryption`)
+	if err != nil {
+		return 0, err
+	}
+	defer stmt.Close()
+
+	var cnt uint
+	err = stmt.QueryRow().Scan(&cnt)
+
+	switch err {
+	case nil:
+		return cnt, nil
+	default:
+		return 0, err
+	}
+}
+
+func (s *sqlitePersistence) GetHRKey() ([]byte, []byte, error) {
+	stmt, err := s.DB.Prepare(`SELECT key, group_id FROM hash_ratchet_encryption limit 1`)
+	if err != nil {
+		return nil, nil, err
+	}
+	defer stmt.Close()
+
+	var key []byte
+	var groupId []byte
+	err = stmt.QueryRow().Scan(&key, &groupId)
+
+	switch err {
+	case nil:
+		return key, groupId, nil
+	default:
+		return nil, nil, err
+	}
 }

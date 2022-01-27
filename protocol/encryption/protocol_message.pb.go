@@ -355,7 +355,7 @@ type HRHeader struct {
 	// Community message number for this key_id
 	SeqNo uint32 `protobuf:"varint,2,opt,name=seq_no,json=seqNo,proto3" json:"seq_no,omitempty"`
 	// Community ID
-	GroupId              string   `protobuf:"bytes,3,opt,name=group_id,json=groupId,proto3" json:"group_id,omitempty"`
+	GroupId              []byte   `protobuf:"bytes,3,opt,name=group_id,json=groupId,proto3" json:"group_id,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -400,11 +400,11 @@ func (m *HRHeader) GetSeqNo() uint32 {
 	return 0
 }
 
-func (m *HRHeader) GetGroupId() string {
+func (m *HRHeader) GetGroupId() []byte {
 	if m != nil {
 		return m.GroupId
 	}
-	return ""
+	return nil
 }
 
 // Direct message value

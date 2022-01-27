@@ -99,12 +99,12 @@ func (s *EncryptionServiceTestSuite) TestHashRatchetSend() {
 	bobKey, err := crypto.GenerateKey()
 	s.Require().NoError(err)
 
-	communityID := "test_community_id"
+	communityID := []byte("test_community_id")
 	s.Require().NotNil(aliceKey)
 	s.Require().NotNil(bobKey)
 
 	s.logger.Info("Hash ratchet key exchange 1")
-	keyID1, _ := s.alice.encryptor.GenerateHashRatchetKey([]byte(communityID))
+	keyID1, _ := s.alice.encryptor.GenerateHashRatchetKey(communityID)
 	hashRatchetKeyExMsg1, _ := s.alice.BuildHashRatchetKeyExchangeMessage(aliceKey, &bobKey.PublicKey, communityID, keyID1)
 
 	s.logger.Info("Hash ratchet key exchange 1", zap.Any("msg", hashRatchetKeyExMsg1.Message))

@@ -228,12 +228,19 @@ func (p *Protocol) BuildEncryptedMessage(myIdentityKey *ecdsa.PrivateKey, public
 	return spec, nil
 }
 
+func (p *Protocol) GenerateHashRatchetKey(groupID []byte) (uint32, error) {
+	logger := p.logger.With(zap.String("site", "GenerateHashRatchetKey"))
+	logger.Info("### GenerateHashRatchetKey", zap.String("groupID", types.EncodeHex(groupID)))
+	return p.encryptor.GenerateHashRatchetKey(groupID)
+}
+
 // BuildHashRatchetKeyExchangeMessage builds a 1:1 message
 // containing newly generated hash ratchet key
-func (p *Protocol) BuildHashRatchetKeyExchangeMessage(myIdentityKey *ecdsa.PrivateKey, publicKey *ecdsa.PublicKey, groupID string, keyID uint32) (*ProtocolMessageSpec, error) {
+func (p *Protocol) BuildHashRatchetKeyExchangeMessage(myIdentityKey *ecdsa.PrivateKey, publicKey *ecdsa.PublicKey, groupID []byte, keyID uint32) (*ProtocolMessageSpec, error) {
 
 	logger := p.logger.With(zap.String("site", "BuildHashRatchetKeyExchangeMessage"))
-	keyData, err := p.encryptor.persistence.GetHashRatchetKeyByID([]byte(groupID), keyID, 0)
+	logger.Info("### BuildHashRatchetKeyExchangeMessage", zap.String("groupID", types.EncodeHex(groupID)))
+	keyData, err := p.encryptor.persistence.GetHashRatchetKeyByID(groupID, keyID, 0)
 	if err != nil {
 		return nil, err
 	}
@@ -258,10 +265,31 @@ func (p *Protocol) BuildHashRatchetKeyExchangeMessage(myIdentityKey *ecdsa.Priva
 	return response, err
 }
 
+func (p *Protocol) GetCurrentKeyForGroup(groupID []byte) (uint32, error) {
+	return p.encryptor.persistence.GetCurrentKeyForGroup(groupID)
+
+}
+
+func (p *Protocol) GetHRKeyCount() (uint, error) {
+	cnt, err := p.encryptor.persistence.GetHRKeyCount()
+	if err != nil {
+		return 0, err
+	}
+	return cnt, nil
+}
+
+func (p *Protocol) GetHRKey() ([]byte, []byte, error) {
+	key, groupId, err := p.encryptor.persistence.GetHRKey()
+	if err != nil {
+		return nil, nil, err
+	}
+	return key, groupId, nil
+}
+
 // BuildHashRatchetMessage returns a hash ratchet chat message
 func (p *Protocol) BuildHashRatchetMessage(groupID []byte, payload []byte) (*ProtocolMessageSpec, error) {
 
-	keyID, err := p.encryptor.persistence.GetCurrentKeyForGroup(string(groupID))
+	keyID, err := p.encryptor.persistence.GetCurrentKeyForGroup(groupID)
 	if err != nil {
 		return nil, err
 	}
@@ -439,6 +467,7 @@ func (p *Protocol) HandleMessage(
 		zap.String("my-installation-id", p.encryptor.config.InstallationID),
 		zap.String("messageID", types.EncodeHex(messageID)))
 
+	logger.Info("### encryption HandleMessage", zap.Any("protocolMessage", protocolMessage))
 	if p.encryptor == nil {
 		return nil, errors.New("encryption service not initialized")
 	}
@@ -473,16 +502,20 @@ func (p *Protocol) HandleMessage(
 			return nil, err
 		}
 
+		logger.Info("### encryption HandleMessage 2", zap.Any("decrypted", message))
 		dmProtocol := encryptedMessage[p.encryptor.config.InstallationID]
 		if dmProtocol == nil {
 			dmProtocol = encryptedMessage[noInstallationID]
 		}
 		if dmProtocol != nil {
+			logger.Info("### encryption HandleMessage 3", zap.Any("hrHeader", types.EncodeHex([]byte(dmProtocol.HRHeader.GroupId))))
 			hrHeader := dmProtocol.HRHeader
 			if hrHeader != nil && hrHeader.SeqNo == 0 {
 				// Payload contains hash ratchet key
+				logger.Info("### encryption HandleMessage 4")
 				err = p.encryptor.persistence.SaveHashRatchetKey(hrHeader.GroupId, hrHeader.KeyId, message)
 				if err != nil {
+					logger.Info("### encryption HandleMessage 5")
 					return nil, err
 				}
 			}
@@ -499,6 +532,7 @@ func (p *Protocol) HandleMessage(
 			response.SharedSecrets = []*sharedsecret.Secret{sharedSecret}
 		}
 		response.DecryptedMessage = message
+		logger.Info("### encryption HandleMessage 6")
 		return response, nil
 	}
 
