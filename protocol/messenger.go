@@ -645,11 +645,9 @@ func (m *Messenger) Start() (*MessengerResponse, error) {
 
 	}
 
-	if m.config.featureFlags.MailserverCycle {
-		err := m.StartMailserverCycle()
-		if err != nil {
-			return nil, err
-		}
+	err = m.StartMailserverCycle()
+	if err != nil {
+		return nil, err
 	}
 
 	err = m.imageServer.Start()
@@ -697,9 +695,7 @@ func (m *Messenger) handleConnectionChange(online bool) {
 			m.pushNotificationClient.Offline()
 		}
 
-		if m.config.featureFlags.MailserverCycle {
-			m.DisconnectActiveMailserver() // force mailserver cycle to run again
-		}
+		m.DisconnectActiveMailserver() // force mailserver cycle to run again
 	}
 
 	m.ensVerifier.SetOnline(online)
