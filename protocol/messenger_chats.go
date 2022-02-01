@@ -587,7 +587,9 @@ func (m *Messenger) ShareImageMessage(request *requests.ShareImageMessage) (*Mes
 	for _, pk := range request.Users {
 		message := &common.Message{}
 		message.ChatId = pk.String()
-		message.Base64Image = msg.Base64Image
+		message.Payload = msg.GetPayload()
+		message.MessageType = msg.GetMessageType()
+
 		messages = append(messages, message)
 		r, err := m.CreateOneToOneChat(&requests.CreateOneToOneChat{ID: pk})
 		if err != nil {
