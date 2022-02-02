@@ -20,19 +20,20 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	ethTypes "github.com/ethereum/go-ethereum/core/types"
 	"github.com/status-im/status-go/account"
+	"github.com/status-im/status-go/contracts"
+	"github.com/status-im/status-go/contracts/registrar"
+	"github.com/status-im/status-go/contracts/resolver"
+	"github.com/status-im/status-go/contracts/snt"
 	"github.com/status-im/status-go/eth-node/types"
 	"github.com/status-im/status-go/params"
 	"github.com/status-im/status-go/rpc"
-	"github.com/status-im/status-go/services/ens/erc20"
-	"github.com/status-im/status-go/services/ens/registrar"
-	"github.com/status-im/status-go/services/ens/resolver"
 	"github.com/status-im/status-go/services/rpcfilters"
 	"github.com/status-im/status-go/transactions"
 )
 
 func NewAPI(rpcClient *rpc.Client, accountsManager *account.GethManager, rpcFiltersSrvc *rpcfilters.Service, config *params.NodeConfig) *API {
 	return &API{
-		contractMaker: &contractMaker{
+		contractMaker: &contracts.ContractMaker{
 			RPCClient: rpcClient,
 		},
 		accountsManager: accountsManager,
@@ -48,7 +49,7 @@ type uri struct {
 }
 
 type API struct {
-	contractMaker   *contractMaker
+	contractMaker   *contracts.ContractMaker
 	accountsManager *account.GethManager
 	rpcFiltersSrvc  *rpcfilters.Service
 	config          *params.NodeConfig
@@ -60,7 +61,7 @@ func (api *API) Resolver(ctx context.Context, chainID uint64, username string) (
 		return nil, err
 	}
 
-	registry, err := api.contractMaker.newRegistry(chainID)
+	registry, err := api.contractMaker.NewRegistry(chainID)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +81,7 @@ func (api *API) OwnerOf(ctx context.Context, chainID uint64, username string) (*
 		return nil, err
 	}
 
-	registry, err := api.contractMaker.newRegistry(chainID)
+	registry, err := api.contractMaker.NewRegistry(chainID)
 	if err != nil {
 		return nil, err
 	}
@@ -105,7 +106,7 @@ func (api *API) ContentHash(ctx context.Context, chainID uint64, username string
 		return nil, err
 	}
 
-	resolver, err := api.contractMaker.newPublicResolver(chainID, resolverAddress)
+	resolver, err := api.contractMaker.NewPublicResolver(chainID, resolverAddress)
 	if err != nil {
 		return nil, err
 	}
@@ -130,7 +131,7 @@ func (api *API) PublicKeyOf(ctx context.Context, chainID uint64, username string
 		return "", err
 	}
 
-	resolver, err := api.contractMaker.newPublicResolver(chainID, resolverAddress)
+	resolver, err := api.contractMaker.NewPublicResolver(chainID, resolverAddress)
 	if err != nil {
 		return "", err
 	}
@@ -154,7 +155,7 @@ func (api *API) AddressOf(ctx context.Context, chainID uint64, username string) 
 		return nil, err
 	}
 
-	resolver, err := api.contractMaker.newPublicResolver(chainID, resolverAddress)
+	resolver, err := api.contractMaker.NewPublicResolver(chainID, resolverAddress)
 	if err != nil {
 		return nil, err
 	}
@@ -169,7 +170,7 @@ func (api *API) AddressOf(ctx context.Context, chainID uint64, username string) 
 }
 
 func (api *API) ExpireAt(ctx context.Context, chainID uint64, username string) (string, error) {
-	registrar, err := api.contractMaker.newUsernameRegistrar(chainID)
+	registrar, err := api.contractMaker.NewUsernameRegistrar(chainID)
 	if err != nil {
 		return "", err
 	}
@@ -184,7 +185,7 @@ func (api *API) ExpireAt(ctx context.Context, chainID uint64, username string) (
 }
 
 func (api *API) Price(ctx context.Context, chainID uint64) (string, error) {
-	registrar, err := api.contractMaker.newUsernameRegistrar(chainID)
+	registrar, err := api.contractMaker.NewUsernameRegistrar(chainID)
 	if err != nil {
 		return "", err
 	}
@@ -210,7 +211,7 @@ func (api *API) getSigner(chainID uint64, from types.Address, password string) b
 }
 
 func (api *API) Release(ctx context.Context, chainID uint64, txArgs transactions.SendTxArgs, password string, username string) (string, error) {
-	registrar, err := api.contractMaker.newUsernameRegistrar(chainID)
+	registrar, err := api.contractMaker.NewUsernameRegistrar(chainID)
 	if err != nil {
 		return "", err
 	}
@@ -241,7 +242,11 @@ func (api *API) ReleaseEstimate(ctx context.Context, chainID uint64, txArgs tran
 		return 0, err
 	}
 
-	registrarAddress := usernameRegistrarsByChainID[chainID]
+	registrarAddress, err := registrar.ContractAddress(chainID)
+	if err != nil {
+		return 0, err
+	}
+
 	return ethClient.EstimateGas(ctx, ethereum.CallMsg{
 		From:  common.Address(txArgs.From),
 		To:    &registrarAddress,
@@ -251,7 +256,7 @@ func (api *API) ReleaseEstimate(ctx context.Context, chainID uint64, txArgs tran
 }
 
 func (api *API) Register(ctx context.Context, chainID uint64, txArgs transactions.SendTxArgs, password string, username string, pubkey string) (string, error) {
-	snt, err := api.contractMaker.newSNT(chainID)
+	snt, err := api.contractMaker.NewSNT(chainID)
 	if err != nil {
 		return "", err
 	}
@@ -274,10 +279,15 @@ func (api *API) Register(ctx context.Context, chainID uint64, txArgs transaction
 		return "", err
 	}
 
+	registrarAddress, err := registrar.ContractAddress(chainID)
+	if err != nil {
+		return "", err
+	}
+
 	txOpts := txArgs.ToTransactOpts(api.getSigner(chainID, txArgs.From, password))
 	tx, err := snt.ApproveAndCall(
 		txOpts,
-		usernameRegistrarsByChainID[chainID],
+		registrarAddress,
 		price,
 		extraData,
 	)
@@ -309,12 +319,17 @@ func (api *API) RegisterEstimate(ctx context.Context, chainID uint64, txArgs tra
 		return 0, err
 	}
 
-	sntABI, err := abi.JSON(strings.NewReader(erc20.SNTABI))
+	sntABI, err := abi.JSON(strings.NewReader(snt.SNTABI))
 	if err != nil {
 		return 0, err
 	}
 
-	data, err := sntABI.Pack("approveAndCall", usernameRegistrarsByChainID[chainID], price, extraData)
+	registrarAddress, err := registrar.ContractAddress(chainID)
+	if err != nil {
+		return 0, err
+	}
+
+	data, err := sntABI.Pack("approveAndCall", registrarAddress, price, extraData)
 	if err != nil {
 		return 0, err
 	}
@@ -324,10 +339,14 @@ func (api *API) RegisterEstimate(ctx context.Context, chainID uint64, txArgs tra
 		return 0, err
 	}
 
-	contractAddress := sntByChainID[chainID]
+	sntAddress, err := snt.ContractAddress(chainID)
+	if err != nil {
+		return 0, err
+	}
+
 	return ethClient.EstimateGas(ctx, ethereum.CallMsg{
 		From:  common.Address(txArgs.From),
-		To:    &contractAddress,
+		To:    &sntAddress,
 		Value: big.NewInt(0),
 		Data:  data,
 	})
@@ -344,7 +363,7 @@ func (api *API) SetPubKey(ctx context.Context, chainID uint64, txArgs transactio
 		return "", err
 	}
 
-	resolver, err := api.contractMaker.newPublicResolver(chainID, resolverAddress)
+	resolver, err := api.contractMaker.NewPublicResolver(chainID, resolverAddress)
 	if err != nil {
 		return "", err
 	}
