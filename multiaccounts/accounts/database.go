@@ -142,7 +142,6 @@ type Settings struct {
 	LastBackup                     uint64                        `json:"last-backup,omitempty"`
 	BackupEnabled                  bool                          `json:"backup-enabled?,omitempty"`
 	AutoMessageEnabled             bool                          `json:"auto-message-enabled?,omitempty"`
-	ReadReceiptsEnabled            bool                          `json:"read-receipts-enabled?,omitempty"`
 }
 
 func NewDB(db *sql.DB) *Database {
@@ -481,13 +480,6 @@ func (db *Database) SaveSetting(setting string, value interface{}) error {
 		}
 
 		update, err = db.db.Prepare("UPDATE settings SET auto_message_enabled = ? WHERE synthetic_id = 'id'")
-	case "read-receipts-enabled?":
-		_, ok := value.(bool)
-		if !ok {
-			return ErrInvalidConfig
-		}
-
-		update, err = db.db.Prepare("UPDATE settings SET read_receipts_enabled = ? WHERE synthetic_id = 'id'")
 
 	default:
 		return ErrInvalidConfig
@@ -701,15 +693,6 @@ func (db *Database) GetFleet() (rst string, err error) {
 		return rst, nil
 	}
 	return
-}
-
-func (db *Database) GetReadReceiptsEnabled() (bool, error) {
-	var result bool
-	err := db.db.QueryRow("SELECT read-receipts-enabled FROM settings WHERE synthetic_id = 'id'").Scan(&result)
-	if err == sql.ErrNoRows {
-		return result, nil
-	}
-	return result, err
 }
 
 func (db *Database) GetDappsAddress() (rst types.Address, err error) {
