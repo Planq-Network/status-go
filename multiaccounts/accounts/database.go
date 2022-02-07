@@ -557,7 +557,6 @@ func (db *Database) GetSettings() (Settings, error) {
 		&s.BackupEnabled,
 		&s.TelemetryServerURL,
 		&s.AutoMessageEnabled,
-		&s.ReadReceiptsEnabled,
 	)
 
 	return s, err
