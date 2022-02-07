@@ -128,6 +128,8 @@ type Messenger struct {
 
 	// TODO(samyoul) Determine if/how the remaining usage of this mutex can be removed
 	mutex sync.Mutex
+
+	mailMutex sync.Mutex
 }
 
 type connStatus int
@@ -481,6 +483,7 @@ func (m *Messenger) processSentMessages(ids []string) error {
 			return errors.Wrapf(err, "Can't save raw message marked as sent")
 		}
 
+		m.logger.Info("updating outgoing status sent", zap.String("id", id))
 		err = m.UpdateMessageOutgoingStatus(id, common.OutgoingStatusSent)
 		if err != nil {
 			return err
@@ -2758,6 +2761,8 @@ func (m *Messenger) markDeliveredMessages(acks [][]byte) {
 
 		messageID := messageIDBytes.String()
 		//mark messages as delivered
+
+		m.logger.Info("updating outgoing status delivered", zap.String("id", messageID))
 		err = m.UpdateMessageOutgoingStatus(messageID, common.OutgoingStatusDelivered)
 		if err != nil {
 			m.logger.Debug("Can't set message status as delivered", zap.Error(err))
@@ -3699,6 +3704,9 @@ func (m *Messenger) AllMessagesFromChatsAndCommunitiesWhichMatchTerm(communityId
 }
 
 func (m *Messenger) SaveMessages(messages []*common.Message) error {
+	for _, m1 := range messages {
+		m.logger.Info("saving message", zap.String("id", m1.ID), zap.String("status", m1.OutgoingStatus))
+	}
 	return m.persistence.SaveMessages(messages)
 }
 
@@ -3914,6 +3922,7 @@ func (m *Messenger) unmuteChat(chat *Chat, contact *Contact) error {
 }
 
 func (m *Messenger) UpdateMessageOutgoingStatus(id, newOutgoingStatus string) error {
+	m.logger.Info("updating outgoing status", zap.String("id", id), zap.String("status", newOutgoingStatus))
 	return m.persistence.UpdateMessageOutgoingStatus(id, newOutgoingStatus)
 }
 
