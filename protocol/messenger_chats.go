@@ -588,6 +588,8 @@ func (m *Messenger) ShareImageMessage(request *requests.ShareImageMessage) (*Mes
 		message := &common.Message{}
 		message.ChatId = pk.String()
 		message.Payload = msg.GetPayload()
+		message.Text = request.Text
+		message.ContentType = protobuf.ChatMessage_ContentType(request.ContentType)
 		message.MessageType = msg.GetMessageType()
 		messages = append(messages, message)
 		r, err := m.CreateOneToOneChat(&requests.CreateOneToOneChat{ID: pk})

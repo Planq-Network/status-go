@@ -10,16 +10,18 @@ var ErrShareMessageInvalidID = errors.New("share-image-message: invalid id")
 var ErrShareMessageEmptyUsers = errors.New("share-image-message: empty users")
 
 type ShareImageMessage struct {
-	MessageID string           `json:"id"`
-	Users     []types.HexBytes `json:"users"`
+	MessageID   string           `json:"id"`
+	Users       []types.HexBytes `json:"users"`
+	Text        string           `json:"text"`
+	ContentType int32            `json:"content-type"`
 }
 
-func (j *ShareImageMessage) Validate() error {
-	if len(j.MessageID) == 0 {
+func (s *ShareImageMessage) Validate() error {
+	if len(s.MessageID) == 0 {
 		return ErrShareMessageInvalidID
 	}
 
-	if len(j.Users) == 0 {
+	if len(s.Users) == 0 {
 		return ErrShareMessageEmptyUsers
 	}
 
