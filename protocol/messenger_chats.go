@@ -4,8 +4,6 @@ import (
 	"context"
 	"errors"
 
-	"go.uber.org/zap"
-
 	"github.com/status-im/status-go/protocol/common"
 	"github.com/status-im/status-go/protocol/images"
 	"github.com/status-im/status-go/protocol/protobuf"
@@ -599,9 +597,7 @@ func (m *Messenger) ShareImageMessage(request *requests.ShareImageMessage) (*Mes
 		message.ChatId = pk.String()
 		message.Payload = &protobuf.ChatMessage_Image{Image: &image}
 		message.ContentType = protobuf.ChatMessage_ContentType(request.ContentType)
-		message.MessageType = msg.GetMessageType()
 		messages = append(messages, message)
-		m.logger.Debug("shared-message", zap.Any("message-shared", message))
 
 		r, err := m.CreateOneToOneChat(&requests.CreateOneToOneChat{ID: pk})
 		if err != nil {
