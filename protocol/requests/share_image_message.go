@@ -12,8 +12,7 @@ var ErrShareMessageEmptyUsers = errors.New("share-image-message: empty users")
 type ShareImageMessage struct {
 	MessageID   string           `json:"id"`
 	Users       []types.HexBytes `json:"users"`
-	Text        string           `json:"text"`
-	ContentType int32            `json:"content-type"`
+	ContentType int32            `json:"contentType"`
 }
 
 func (s *ShareImageMessage) Validate() error {
