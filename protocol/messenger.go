@@ -2230,6 +2230,8 @@ func (m *Messenger) dispatchMessage(ctx context.Context, spec common.RawMessage)
 	spec.LastSent = m.getTimesource().GetCurrentTime()
 	err = m.persistence.SaveRawMessage(&spec)
 	if err != nil {
+		m.logger.Warn("raw message saving spec", zap.Any("spec", spec))
+		m.logger.Warn("raw message saving error", zap.Error(err))
 		return spec, err
 	}
 
