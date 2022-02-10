@@ -6,7 +6,6 @@ import (
 
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/status-im/status-go/protocol/common"
-	"github.com/status-im/status-go/protocol/images"
 	"github.com/status-im/status-go/protocol/protobuf"
 	"github.com/status-im/status-go/protocol/requests"
 	"github.com/status-im/status-go/protocol/transport"
@@ -580,27 +579,20 @@ func (m *Messenger) ShareImageMessage(request *requests.ShareImageMessage) (*Mes
 	}
 	response := &MessengerResponse{}
 
-	log.Error("RPC method crashed: " + request.MessageID.String())
+	log.Error("shared message id: " + request.MessageID.String())
 	msg, err := m.persistence.MessageByID(request.MessageID.String())
 	if err != nil {
-		log.Error("RPC method crashed: " + err.Error())
+		log.Error("shared message error: " + err.Error())
 		return nil, err
 	}
 
-	log.Error("RPC method crashed: " + msg.GetImage().String())
-
-	payload := msg.GetImage().Payload
-
-	image := protobuf.ImageMessage{
-		Payload: payload,
-		Type:    images.ImageType(payload),
-	}
+	log.Error("shared message image " + msg.Base64Image)
 
 	var messages []*common.Message
 	for _, pk := range request.Users {
 		message := &common.Message{}
 		message.ChatId = pk.String()
-		message.Payload = &protobuf.ChatMessage_Image{Image: &image}
+		message.Base64Image = msg.Base64Image
 		message.ContentType = protobuf.ChatMessage_ContentType(request.ContentType)
 		messages = append(messages, message)
 
