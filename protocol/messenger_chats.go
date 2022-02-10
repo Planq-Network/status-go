@@ -596,7 +596,6 @@ func (m *Messenger) ShareImageMessage(request *requests.ShareImageMessage) (*Mes
 		message := &common.Message{}
 		message.ChatId = pk.String()
 		message.Payload = &protobuf.ChatMessage_Image{Image: &image}
-		message.Text = "This message has been forwarded to you"
 		message.ContentType = protobuf.ChatMessage_ContentType(request.ContentType)
 		messages = append(messages, message)
 
