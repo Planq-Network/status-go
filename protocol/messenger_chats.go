@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/status-im/status-go/protocol/common"
 	"github.com/status-im/status-go/protocol/images"
 	"github.com/status-im/status-go/protocol/protobuf"
@@ -579,10 +580,14 @@ func (m *Messenger) ShareImageMessage(request *requests.ShareImageMessage) (*Mes
 	}
 	response := &MessengerResponse{}
 
-	msg, err := m.persistence.MessageByID(request.MessageID)
+	log.Error("RPC method crashed: " + request.MessageID.String())
+	msg, err := m.persistence.MessageByID(request.MessageID.String())
 	if err != nil {
+		log.Error("RPC method crashed: " + err.Error())
 		return nil, err
 	}
+
+	log.Error("RPC method crashed: " + msg.GetImage().String())
 
 	payload := msg.GetImage().Payload
 

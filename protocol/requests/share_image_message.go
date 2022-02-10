@@ -10,7 +10,7 @@ var ErrShareMessageInvalidID = errors.New("share-image-message: invalid id")
 var ErrShareMessageEmptyUsers = errors.New("share-image-message: empty users")
 
 type ShareImageMessage struct {
-	MessageID   string           `json:"id"`
+	MessageID   types.HexBytes   `json:"id"`
 	Users       []types.HexBytes `json:"users"`
 	ContentType int32            `json:"contentType"`
 }
