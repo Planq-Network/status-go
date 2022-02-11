@@ -26,7 +26,6 @@ import (
 
 	gethcommon "github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/p2p/enode"
 	"github.com/status-im/status-go/appdatabase"
 	"github.com/status-im/status-go/appmetrics"
 	"github.com/status-im/status-go/connection"
@@ -147,8 +146,8 @@ type peerStatus struct {
 }
 type mailserverCycle struct {
 	sync.RWMutex
-	activeMailserver *enode.Node // For usage with wakuV1
-	activeStoreNode  *peer.ID    // For usage with wakuV2
+	activeMailserver *mailserversDB.Mailserver // For usage with wakuV1
+	activeStoreNode  *peer.ID                  // For usage with wakuV2
 	peers            map[string]peerStatus
 	events           chan *p2p.PeerEvent
 	subscription     event.Subscription
@@ -3620,24 +3619,6 @@ func (m *Messenger) handleRetrievedMessages(chatWithMessages map[transport.Filte
 	m.modifiedInstallations = new(stringBoolMap)
 
 	return messageState.Response, nil
-}
-
-// SetMailserver sets the currently used mailserver
-func (m *Messenger) SetMailserver(peer []byte) {
-	m.mailserver = peer
-}
-
-func (m *Messenger) RequestHistoricMessages(
-	ctx context.Context,
-	from, to uint32,
-	cursor []byte,
-	storeCursor *types.StoreRequestCursor,
-	waitForResponse bool,
-) ([]byte, *types.StoreRequestCursor, error) {
-	if m.mailserver == nil {
-		return nil, nil, errors.New("no mailserver selected")
-	}
-	return m.transport.SendMessagesRequest(ctx, m.mailserver, from, to, cursor, storeCursor, waitForResponse)
 }
 
 func (m *Messenger) MessageByID(id string) (*common.Message, error) {
