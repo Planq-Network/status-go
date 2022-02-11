@@ -586,9 +586,7 @@ func (m *Messenger) ShareImageMessage(request *requests.ShareImageMessage) (*Mes
 	}
 
 	payload := msg.GetImage().GetPayload()
-	log.Error("image message ", msg.GetImage())
-	log.Error("image message payload size ", len(payload))
-	log.Error("image message payload ", string(msg.GetImage().GetPayload()))
+	log.Error("image message ", msg)
 
 	image := protobuf.ImageMessage{
 		Payload: payload,
