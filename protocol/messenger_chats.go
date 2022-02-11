@@ -580,13 +580,20 @@ func (m *Messenger) ShareImageMessage(request *requests.ShareImageMessage) (*Mes
 	}
 	response := &MessengerResponse{}
 
-	msg, err := m.persistence.MessageByID(request.MessageID.String())
-	if err != nil {
-		return nil, err
+	// Check if it's already in the response
+	msg := response.GetMessage(request.MessageID.String())
+	// otherwise pull from database
+	if msg == nil {
+		var err error
+		msg, err = m.persistence.MessageByID(request.MessageID.String())
+		if err != nil {
+			return nil, err
+		}
 	}
 
 	payload := msg.GetImage().GetPayload()
 	log.Error("image message ", "image", msg)
+	log.Error("image message ", "payload", payload)
 
 	image := protobuf.ImageMessage{
 		Payload: payload,
