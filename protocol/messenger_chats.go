@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/status-im/status-go/protocol/common"
 	"github.com/status-im/status-go/protocol/images"
 	"github.com/status-im/status-go/protocol/protobuf"
@@ -590,12 +591,13 @@ func (m *Messenger) ShareImageMessage(request *requests.ShareImageMessage) (*Mes
 		Type:    images.ImageType(payload),
 	}
 
+	log.Error("image message type" + msg.GetImage().GetType().String())
+
 	var messages []*common.Message
 	for _, pk := range request.Users {
 		message := &common.Message{}
 		message.ChatId = pk.String()
 		message.Payload = &protobuf.ChatMessage_Image{Image: &image}
-		message.Base64Image = msg.Base64Image
 		message.ContentType = protobuf.ChatMessage_ContentType(request.ContentType)
 		messages = append(messages, message)
 
