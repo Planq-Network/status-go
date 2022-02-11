@@ -27,6 +27,10 @@ func showMessageNotification(publicKey ecdsa.PublicKey, message *common.Message,
 		return true
 	}
 
+	if chat.Muted {
+		return false
+	}
+
 	if message.Mentioned {
 		return true
 	}
