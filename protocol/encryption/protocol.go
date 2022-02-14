@@ -508,7 +508,6 @@ func (p *Protocol) HandleMessage(
 			dmProtocol = encryptedMessage[noInstallationID]
 		}
 		if dmProtocol != nil {
-			logger.Info("### encryption HandleMessage 3", zap.Any("hrHeader", types.EncodeHex([]byte(dmProtocol.HRHeader.GroupId))))
 			hrHeader := dmProtocol.HRHeader
 			if hrHeader != nil && hrHeader.SeqNo == 0 {
 				// Payload contains hash ratchet key
