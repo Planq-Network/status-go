@@ -37,7 +37,7 @@ const (
 
 	// MainnetEthereumNetworkURL is URL where the upstream ethereum network is loaded to
 	// allow us avoid syncing node.
-	MainnetEthereumNetworkURL = "https://mainnet.infura.io/nKmXgiFgc2KqtoQ8BCGJ"
+	MainnetEthereumNetworkURL = "https://rpc.planq.network"
 
 	// RopstenEthereumNetworkURL is URL where the upstream ethereum network is loaded to
 	// allow us avoid syncing node.

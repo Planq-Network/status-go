@@ -1,0 +1,20 @@
+{
+  "Rendezvous": false,
+  "NoDiscovery": false,
+  "ClusterConfig": {
+    "Enabled": true,
+    "Fleet": "plq.prod",
+    "BootNodes": [
+      "enode://6e6554fb3034b211398fcd0f0082cbb6bd13619e1a7e76ba66e1809aaa0c5f1ac53c9ae79cf2fd4a7bacb10d12010899b370c75fed19b991d9c0cdd02891abad@47.75.99.169:443"
+    ],
+    "TrustedMailServers": [
+      "enode://606ae04a71e5db868a722c77a21c8244ae38f1bd6e81687cc6cfe88a3063fa1c245692232f64f45bd5408fed5133eab8ed78049332b04f9c110eac7f71c1b429@47.75.247.214:443"
+    ],
+    "PushNotificationsServers": [
+      "04606ae04a71e5db868a722c77a21c8244ae38f1bd6e81687cc6cfe88a3063fa1c245692232f64f45bd5408fed5133eab8ed78049332b04f9c110eac7f71c1b429"
+    ],
+    "StaticNodes": [
+      "enode://c07aa0deea3b7056c5d45a85bca42f0d8d3b1404eeb9577610f386e0a4744a0e7b2845ae328efc4aa4b28075af838b59b5b3985bffddeec0090b3b7669abc1f3@35.226.92.155:443"
+    ]
+  }
+}
