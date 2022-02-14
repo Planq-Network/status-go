@@ -52,7 +52,7 @@ const (
 	GoerliEthereumNetworkURL = "http://goerli.blockscout.com/"
 
 	// MainNetworkID is id of the main network
-	MainNetworkID = 1
+	MainNetworkID = 7000
 
 	// RopstenNetworkID is id of a test network (on PoW)
 	RopstenNetworkID = 3
