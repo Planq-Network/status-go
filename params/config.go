@@ -1079,7 +1079,7 @@ func (c *NodeConfig) AddAPIModule(m string) {
 // 1 - mainnet, 3 - ropsten, 4 - rinkeby
 func LesTopic(netid int) string {
 	switch netid {
-	case 1:
+	case 7000:
 		return LESDiscoveryIdentifier + types.Bytes2Hex(params.MainnetGenesisHash.Bytes()[:8])
 	case 3:
 		return LESDiscoveryIdentifier + types.Bytes2Hex(params.RopstenGenesisHash.Bytes()[:8])

@@ -73,7 +73,7 @@ const (
 	MailServerDiscv5Topic = discv5.Topic("whispermail")
 
 	// LESDiscoveryIdentifier is a prefix for topic used for LES peers discovery.
-	LESDiscoveryIdentifier = "LES2@"
+	LESDiscoveryIdentifier = "LES2PLQ@"
 )
 
 var (
