@@ -65,7 +65,7 @@ var (
 	dataDir   = flag.String("dir", getDefaultDataDir(), "Directory used by node to store data")
 	networkID = flag.Int(
 		"network-id",
-		params.RopstenNetworkID,
+		params.MainNetworkID,
 		fmt.Sprintf(
 			"A network ID: %d (Mainnet), %d (Ropsten), %d (Rinkeby), %d (Goerli)",
 			params.MainNetworkID, params.RopstenNetworkID, params.RinkebyNetworkID, params.GoerliNetworkID,
@@ -375,15 +375,15 @@ func defaultNodeConfig(installationID string) (*params.NodeConfig, error) {
 	nodeConfig := &params.NodeConfig{}
 	nodeConfig.NetworkID = 1
 	nodeConfig.LogLevel = "ERROR"
-	nodeConfig.DataDir = "/ethereum/mainnet_rpc"
+	nodeConfig.DataDir = "/planq/mainnet_rpc"
 	nodeConfig.UpstreamConfig = params.UpstreamRPCConfig{
 		Enabled: true,
-		URL:     "https://mainnet.infura.io/v3/800c641949d64d768a5070a1b0511938",
+		URL:     "https://rpc.planq.network",
 	}
 
 	nodeConfig.Name = "StatusIM"
 	nodeConfig.Rendezvous = true
-	clusterConfig, err := params.LoadClusterConfigFromFleet("eth.prod")
+	clusterConfig, err := params.LoadClusterConfigFromFleet("plq.prod")
 	if err != nil {
 		return nil, err
 	}
