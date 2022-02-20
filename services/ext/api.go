@@ -8,6 +8,8 @@ import (
 	"math/big"
 	"time"
 
+	"github.com/status-im/status-go/services/browsers"
+
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/p2p/enode"
@@ -684,6 +686,10 @@ func (api *PublicAPI) SyncDevices(ctx context.Context, name, picture string) err
 	return api.service.messenger.SyncDevices(ctx, name, picture)
 }
 
+func (api *PublicAPI) SyncBookmark(ctx context.Context, bookmark browsers.Bookmark) error {
+	return api.service.messenger.SyncBookmark(ctx, &bookmark)
+}
+
 func (api *PublicAPI) SignMessageWithChatKey(ctx context.Context, message string) (types.HexBytes, error) {
 	return api.service.messenger.SignMessage(message)
 }
@@ -846,6 +852,10 @@ func (api *PublicAPI) EnsVerified(pk, ensName string) error {
 
 func (api *PublicAPI) RequestCommunityInfoFromMailserver(communityID string) (*communities.Community, error) {
 	return api.service.messenger.RequestCommunityInfoFromMailserver(communityID)
+}
+
+func (api *PublicAPI) RequestCommunityInfoFromMailserverAsync(communityID string) error {
+	return api.service.messenger.RequestCommunityInfoFromMailserverAsync(communityID)
 }
 
 func (api *PublicAPI) UnreadActivityCenterNotificationsCount() (uint64, error) {
