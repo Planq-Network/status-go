@@ -19,15 +19,15 @@ import (
 
 	"github.com/ethereum/go-ethereum/node"
 	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/status-im/status-go/appdatabase"
-	gethbridge "github.com/status-im/status-go/eth-node/bridge/geth"
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/multiaccounts"
-	"github.com/status-im/status-go/params"
-	"github.com/status-im/status-go/services/ext"
-	"github.com/status-im/status-go/t/helpers"
-	"github.com/status-im/status-go/waku"
+	"github.com/planq-network/status-go/appdatabase"
+	gethbridge "github.com/planq-network/status-go/eth-node/bridge/geth"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/multiaccounts"
+	"github.com/planq-network/status-go/params"
+	"github.com/planq-network/status-go/services/ext"
+	"github.com/planq-network/status-go/t/helpers"
+	"github.com/planq-network/status-go/waku"
 )
 
 func TestRequestMessagesErrors(t *testing.T) {

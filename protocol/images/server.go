@@ -18,7 +18,7 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/status-im/status-go/protocol/identity/identicon"
+	"github.com/planq-network/status-go/protocol/identity/identicon"
 )
 
 var globalCertificate *tls.Certificate = nil

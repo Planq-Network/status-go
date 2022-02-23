@@ -6,7 +6,7 @@ package main
 // #include <stdlib.h>
 import  "C"
 import "unsafe"
-import mobile "github.com/status-im/status-go/mobile"
+import mobile "github.com/planq-network/status-go/mobile"
 
 func main() {}
 `

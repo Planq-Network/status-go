@@ -1,8 +1,8 @@
 package communities
 
 import (
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/protocol/protobuf"
 )
 
 func (o *Community) ToSyncCommunityProtobuf(clock uint64) (*protobuf.SyncCommunity, error) {

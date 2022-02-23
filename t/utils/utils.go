@@ -20,10 +20,10 @@ import (
 
 	_ "github.com/stretchr/testify/suite" // required to register testify flags
 
-	"github.com/status-im/status-go/logutils"
-	"github.com/status-im/status-go/params"
-	"github.com/status-im/status-go/static"
-	"github.com/status-im/status-go/t"
+	"github.com/planq-network/status-go/logutils"
+	"github.com/planq-network/status-go/params"
+	"github.com/planq-network/status-go/static"
+	"github.com/planq-network/status-go/t"
 )
 
 var (

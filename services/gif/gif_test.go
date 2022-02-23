@@ -9,8 +9,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/status-im/status-go/appdatabase"
-	"github.com/status-im/status-go/multiaccounts/accounts"
+	"github.com/planq-network/status-go/appdatabase"
+	"github.com/planq-network/status-go/multiaccounts/accounts"
 )
 
 func setupSQLTestDb(t *testing.T) (*sql.DB, func()) {

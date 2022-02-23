@@ -26,9 +26,9 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	"github.com/status-im/status-go/waku/common"
-	v0 "github.com/status-im/status-go/waku/v0"
-	v1 "github.com/status-im/status-go/waku/v1"
+	"github.com/planq-network/status-go/waku/common"
+	v0 "github.com/planq-network/status-go/waku/v0"
+	v1 "github.com/planq-network/status-go/waku/v1"
 
 	"go.uber.org/zap"
 
@@ -36,7 +36,7 @@ import (
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/p2p"
 	"github.com/ethereum/go-ethereum/p2p/enode"
-	"github.com/status-im/status-go/protocol/tt"
+	"github.com/planq-network/status-go/protocol/tt"
 )
 
 func TestWakuV0(t *testing.T) {

@@ -5,7 +5,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/p2p/enode"
 
-	"github.com/status-im/status-go/eth-node/types"
+	"github.com/planq-network/status-go/eth-node/types"
 )
 
 // GetFirstConnected returns first connected peer that is also added to a peer store.

@@ -3,7 +3,7 @@ package common
 import (
 	"crypto/ecdsa"
 
-	"github.com/status-im/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/protocol/protobuf"
 )
 
 // RawMessage represent a sent or received message, kept for being able

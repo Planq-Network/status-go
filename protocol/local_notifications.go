@@ -5,10 +5,10 @@ import (
 	"encoding/json"
 
 	gethcommon "github.com/ethereum/go-ethereum/common"
-	"github.com/status-im/status-go/multiaccounts/accounts"
-	"github.com/status-im/status-go/protocol/common"
-	"github.com/status-im/status-go/protocol/communities"
-	localnotifications "github.com/status-im/status-go/services/local-notifications"
+	"github.com/planq-network/status-go/multiaccounts/accounts"
+	"github.com/planq-network/status-go/protocol/common"
+	"github.com/planq-network/status-go/protocol/communities"
+	localnotifications "github.com/planq-network/status-go/services/local-notifications"
 )
 
 type NotificationBody struct {

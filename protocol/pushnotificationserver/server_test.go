@@ -10,11 +10,11 @@ import (
 	"github.com/golang/protobuf/proto"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/protocol/common"
-	"github.com/status-im/status-go/protocol/protobuf"
-	"github.com/status-im/status-go/protocol/sqlite"
-	"github.com/status-im/status-go/protocol/tt"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/protocol/common"
+	"github.com/planq-network/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/protocol/sqlite"
+	"github.com/planq-network/status-go/protocol/tt"
 )
 
 func TestServerSuite(t *testing.T) {

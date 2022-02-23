@@ -19,9 +19,9 @@ import (
 
 	"github.com/ethereum/go-ethereum/p2p"
 	"github.com/ethereum/go-ethereum/p2p/enode"
-	"github.com/status-im/status-go/params"
-	"github.com/status-im/status-go/services/mailservers"
-	"github.com/status-im/status-go/signal"
+	"github.com/planq-network/status-go/params"
+	"github.com/planq-network/status-go/services/mailservers"
+	"github.com/planq-network/status-go/signal"
 )
 
 const defaultBackoff = 30 * time.Second

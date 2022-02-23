@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/require"
 
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/status-im/status-go/appdatabase"
+	"github.com/planq-network/status-go/appdatabase"
 )
 
 func setupTestTransferDB(t *testing.T) (*Block, func()) {

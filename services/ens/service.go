@@ -3,10 +3,10 @@ package ens
 import (
 	"github.com/ethereum/go-ethereum/p2p"
 	ethRpc "github.com/ethereum/go-ethereum/rpc"
-	"github.com/status-im/status-go/account"
-	"github.com/status-im/status-go/params"
-	"github.com/status-im/status-go/rpc"
-	"github.com/status-im/status-go/services/rpcfilters"
+	"github.com/planq-network/status-go/account"
+	"github.com/planq-network/status-go/params"
+	"github.com/planq-network/status-go/rpc"
+	"github.com/planq-network/status-go/services/rpcfilters"
 )
 
 // NewService initializes service instance.

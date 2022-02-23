@@ -5,9 +5,9 @@ import (
 	"database/sql"
 
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/status-im/status-go/images"
-	"github.com/status-im/status-go/multiaccounts/migrations"
-	"github.com/status-im/status-go/sqlite"
+	"github.com/planq-network/status-go/images"
+	"github.com/planq-network/status-go/multiaccounts/migrations"
+	"github.com/planq-network/status-go/sqlite"
 )
 
 // Account stores public information about account.

@@ -1,6 +1,6 @@
 package transport
 
-import "github.com/status-im/status-go/eth-node/types"
+import "github.com/planq-network/status-go/eth-node/types"
 
 // TODO: revise fields encoding/decoding. Some are encoded using hexutil and some using encoding/hex.
 type Filter struct {

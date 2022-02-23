@@ -10,7 +10,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/p2p/enode"
 	"github.com/ethereum/go-ethereum/p2p/enr"
-	"github.com/status-im/status-go/rtt"
+	"github.com/planq-network/status-go/rtt"
 )
 
 type PingQuery struct {

@@ -4,7 +4,7 @@ This document describes the available options in the JSON config for `status-go`
 
 The structure of the JSON config is defined in the [`params/config.go`](/params/config.go) file, which also contains detailed comments on meaning of each option. The `NodeConfig` struct defines the general configuration keys at the __root__ of the JSON file.
 
-If the descriptions of any options are too vague feel free to [open an issue](https://github.com/status-im/status-go/issues/new).
+If the descriptions of any options are too vague feel free to [open an issue](https://github.com/planq-network/status-go/issues/new).
 
 Example config files can be viewed in the [`config/cli`](/config/cli) folder.
 

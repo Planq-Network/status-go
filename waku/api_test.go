@@ -23,7 +23,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/status-im/status-go/waku/common"
+	"github.com/planq-network/status-go/waku/common"
 )
 
 func TestMultipleTopicCopyInNewMessageFilter(t *testing.T) {

@@ -1,7 +1,7 @@
 package statusgo
 
 import (
-	"github.com/status-im/status-go/api"
+	"github.com/planq-network/status-go/api"
 )
 
 var statusBackend = api.NewGethStatusBackend()

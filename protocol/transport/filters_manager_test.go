@@ -8,15 +8,15 @@ import (
 	"os"
 	"testing"
 
-	gethbridge "github.com/status-im/status-go/eth-node/bridge/geth"
-	"github.com/status-im/status-go/protocol/tt"
+	gethbridge "github.com/planq-network/status-go/eth-node/bridge/geth"
+	"github.com/planq-network/status-go/protocol/tt"
 
 	_ "github.com/mutecomm/go-sqlcipher"
 	"github.com/stretchr/testify/suite"
 	"go.uber.org/zap"
 
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/waku"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/waku"
 )
 
 type testKeysPersistence struct {

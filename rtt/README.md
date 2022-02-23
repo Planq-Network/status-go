@@ -63,5 +63,5 @@ EOL
 # Links
 
 * https://github.com/status-im/status-react/issues/9394
-* https://github.com/status-im/status-go/pull/1672
+* https://github.com/planq-network/status-go/pull/1672
 * https://github.com/status-im/tcp-shaker

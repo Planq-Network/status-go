@@ -3,8 +3,8 @@ package accounts
 import (
 	"errors"
 
-	"github.com/status-im/status-go/images"
-	"github.com/status-im/status-go/multiaccounts"
+	"github.com/planq-network/status-go/images"
+	"github.com/planq-network/status-go/multiaccounts"
 )
 
 var (

@@ -11,7 +11,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/log"
 
-	"github.com/status-im/status-go/protocol/zaputil"
+	"github.com/planq-network/status-go/protocol/zaputil"
 )
 
 type gethLoggerCore struct {

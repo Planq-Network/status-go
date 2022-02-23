@@ -12,12 +12,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/status-im/status-go/protocol/sqlite"
+	"github.com/planq-network/status-go/protocol/sqlite"
 
 	"github.com/stretchr/testify/suite"
 	"go.uber.org/zap"
 
-	"github.com/status-im/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/crypto"
 )
 
 var cleartext = []byte("hello")

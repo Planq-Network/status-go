@@ -65,10 +65,10 @@ import (
 	"github.com/status-im/go-waku/waku/v2/protocol/lightpush"
 	"github.com/status-im/go-waku/waku/v2/protocol/relay"
 
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/signal"
-	"github.com/status-im/status-go/wakuv2/common"
-	"github.com/status-im/status-go/wakuv2/persistence"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/signal"
+	"github.com/planq-network/status-go/wakuv2/common"
+	"github.com/planq-network/status-go/wakuv2/persistence"
 
 	"github.com/libp2p/go-libp2p-core/discovery"
 	node "github.com/status-im/go-waku/waku/v2/node"

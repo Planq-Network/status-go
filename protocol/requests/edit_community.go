@@ -3,9 +3,9 @@ package requests
 import (
 	"errors"
 
-	"github.com/status-im/status-go/eth-node/types"
+	"github.com/planq-network/status-go/eth-node/types"
 
-	"github.com/status-im/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/protocol/protobuf"
 )
 
 var (

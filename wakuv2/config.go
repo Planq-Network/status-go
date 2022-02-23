@@ -19,7 +19,7 @@
 package wakuv2
 
 import (
-	"github.com/status-im/status-go/wakuv2/common"
+	"github.com/planq-network/status-go/wakuv2/common"
 )
 
 // Config represents the configuration state of a waku node.

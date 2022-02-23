@@ -5,11 +5,11 @@ import (
 	"os"
 	"testing"
 
-	"github.com/status-im/status-go/protocol/sqlite"
+	"github.com/planq-network/status-go/protocol/sqlite"
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/status-im/status-go/protocol/tt"
+	"github.com/planq-network/status-go/protocol/tt"
 )
 
 func TestNewTransport(t *testing.T) {

@@ -3,8 +3,8 @@ package images
 import (
 	"errors"
 
-	"github.com/status-im/status-go/images"
-	"github.com/status-im/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/images"
+	"github.com/planq-network/status-go/protocol/protobuf"
 )
 
 func ImageType(buf []byte) protobuf.ImageType {

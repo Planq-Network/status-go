@@ -1,6 +1,6 @@
 package protocol
 
-import "github.com/status-im/status-go/protocol/protobuf"
+import "github.com/planq-network/status-go/protocol/protobuf"
 
 type UserStatus struct {
 	PublicKey  string `json:"publicKey,omitempty"`

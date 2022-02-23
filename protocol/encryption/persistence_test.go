@@ -8,10 +8,10 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	"github.com/status-im/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/crypto"
 
-	"github.com/status-im/status-go/protocol/encryption/multidevice"
-	"github.com/status-im/status-go/protocol/sqlite"
+	"github.com/planq-network/status-go/protocol/encryption/multidevice"
+	"github.com/planq-network/status-go/protocol/sqlite"
 )
 
 func TestSQLLitePersistenceTestSuite(t *testing.T) {

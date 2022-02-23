@@ -40,4 +40,4 @@ We parse the names using `labelsFromNodeName()` from [`node/metrics.go`](./node/
 # Links
 
 * https://github.com/status-im/infra-misc/issues/26
-* https://github.com/status-im/status-go/pull/1648
+* https://github.com/planq-network/status-go/pull/1648

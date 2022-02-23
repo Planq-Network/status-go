@@ -9,9 +9,9 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/protocol/transport"
-	v1protocol "github.com/status-im/status-go/protocol/v1"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/protocol/transport"
+	v1protocol "github.com/planq-network/status-go/protocol/v1"
 )
 
 type Client struct {

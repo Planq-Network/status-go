@@ -19,9 +19,9 @@ import (
 
 	"github.com/status-im/rendezvous/server"
 
-	"github.com/status-im/status-go/discovery"
-	"github.com/status-im/status-go/params"
-	"github.com/status-im/status-go/signal"
+	"github.com/planq-network/status-go/discovery"
+	"github.com/planq-network/status-go/params"
+	"github.com/planq-network/status-go/signal"
 )
 
 type PeerPoolSimulationSuite struct {

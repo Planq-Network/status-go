@@ -1,4 +1,4 @@
-module github.com/status-im/status-go
+module github.com/planq-network/status-go
 
 go 1.13
 

@@ -19,12 +19,12 @@ import (
 	"github.com/ethereum/go-ethereum/p2p/discv5"
 	"github.com/ethereum/go-ethereum/params"
 
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/protocol/pushnotificationserver"
-	"github.com/status-im/status-go/static"
-	wakucommon "github.com/status-im/status-go/waku/common"
-	wakuv2common "github.com/status-im/status-go/wakuv2/common"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/protocol/pushnotificationserver"
+	"github.com/planq-network/status-go/static"
+	wakucommon "github.com/planq-network/status-go/waku/common"
+	wakuv2common "github.com/planq-network/status-go/wakuv2/common"
 )
 
 // ----------
@@ -724,7 +724,7 @@ func (c *NodeConfig) UpdateWithDefaults() error {
 	// If any API is defined as public, it will be exposed.
 	// We disallow empty APIModules to avoid confusion
 	// when some APIs suddenly become available for Dapps.
-	// More: https://github.com/status-im/status-go/issues/1870.
+	// More: https://github.com/planq-network/status-go/issues/1870.
 	if c.APIModules == "" {
 		c.APIModules = "net,web3,eth"
 	}

@@ -1,12 +1,12 @@
 package gethbridge
 
 import (
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/waku"
-	"github.com/status-im/status-go/wakuv2"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/waku"
+	"github.com/planq-network/status-go/wakuv2"
 
-	wakucommon "github.com/status-im/status-go/waku/common"
-	wakuv2common "github.com/status-im/status-go/wakuv2/common"
+	wakucommon "github.com/planq-network/status-go/waku/common"
+	wakuv2common "github.com/planq-network/status-go/wakuv2/common"
 )
 
 // NewWakuEnvelopeEventWrapper returns a types.EnvelopeEvent object that mimics Geth's EnvelopeEvent

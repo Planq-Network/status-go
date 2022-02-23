@@ -17,4 +17,4 @@ If you have a piece of code that depends on [go-ethereum](https://github.com/eth
 
 ## License
 
-[Mozilla Public License 2.0](https://github.com/status-im/status-go/blob/develop/LICENSE.md)
+[Mozilla Public License 2.0](https://github.com/planq-network/status-go/blob/develop/LICENSE.md)

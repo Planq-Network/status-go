@@ -5,9 +5,9 @@ import (
 
 	"github.com/ethereum/go-ethereum/rpc"
 
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/params"
-	"github.com/status-im/status-go/services/ext"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/params"
+	"github.com/planq-network/status-go/services/ext"
 )
 
 type Service struct {

@@ -21,7 +21,7 @@ const defaultKdfIterationsNumber = 64000 // nolint: deadcode,varcheck,unused
 
 // The reduced number of kdf iterations (for performance reasons) which is
 // currently used for derivation of the database key
-// https://github.com/status-im/status-go/pull/1343
+// https://github.com/planq-network/status-go/pull/1343
 // https://notes.status.im/i8Y_l7ccTiOYq09HVgoFwA
 const reducedKdfIterationsNumber = 3200
 

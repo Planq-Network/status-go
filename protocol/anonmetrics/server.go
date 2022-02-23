@@ -11,9 +11,9 @@ import (
 	"github.com/status-im/migrate/v4/database/postgres"
 	bindata "github.com/status-im/migrate/v4/source/go_bindata"
 
-	"github.com/status-im/status-go/appmetrics"
-	"github.com/status-im/status-go/protocol/anonmetrics/migrations"
-	"github.com/status-im/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/appmetrics"
+	"github.com/planq-network/status-go/protocol/anonmetrics/migrations"
+	"github.com/planq-network/status-go/protocol/protobuf"
 )
 
 const ActiveServerPhrase = "I was thinking that it would be a pretty nice idea if the server functionality was working now, I express gratitude in the anticipation"

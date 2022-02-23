@@ -3,7 +3,7 @@ package account
 import (
 	"github.com/ethereum/go-ethereum/accounts"
 
-	"github.com/status-im/status-go/account/generator"
+	"github.com/planq-network/status-go/account/generator"
 )
 
 // GethManager represents account manager interface.

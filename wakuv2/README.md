@@ -26,7 +26,7 @@ Although `status-go`'s Waku light node functionality is a direct fork of `go-eth
 
 ## Waku versioning
 
-This package follows a versioning pattern that makes clean separation between breaking versions. As [detailed in the PR](https://github.com/status-im/status-go/pull/1947#issue-407073908) that introduced this strategy to the package.
+This package follows a versioning pattern that makes clean separation between breaking versions. As [detailed in the PR](https://github.com/planq-network/status-go/pull/1947#issue-407073908) that introduced this strategy to the package.
 
 >... the way we will move across versions is to maintain completely separate codebases and eventually remove those that are not supported anymore.
 >
@@ -141,7 +141,7 @@ Additionally this package is home to `MailServerResponse{}` which represents the
 
 ### `const.go`
 
-[`const.go`](./common/const.go), originally a hangover from the [`go-ethereum` `whisperv6/doc.go` package file](https://github.com/ethereum/go-ethereum/blob/master/whisper/whisperv6/doc.go) later [refactored](https://github.com/status-im/status-go/pull/1950), is home to the common Waku constants.
+[`const.go`](./common/const.go), originally a hangover from the [`go-ethereum` `whisperv6/doc.go` package file](https://github.com/ethereum/go-ethereum/blob/master/whisper/whisperv6/doc.go) later [refactored](https://github.com/planq-network/status-go/pull/1950), is home to the common Waku constants.
 
 #### Notes
 
@@ -325,7 +325,7 @@ Initially the message is marked as "Pending" and eventually as "Sent".
 
 In order to trigger the message state transition from "pending" to "sent",
 Waku uses `MessageResponse{}`. Each peer on receiving a message will send back a `MessageResponse`,
-see the [`NewMessagesResponse()` function](https://github.com/status-im/status-go/blob/4d00656c41909ccdd80a8a77a0982bd66f74d29e/waku/v1/message.go#L31).
+see the [`NewMessagesResponse()` function](https://github.com/planq-network/status-go/blob/4d00656c41909ccdd80a8a77a0982bd66f74d29e/waku/v1/message.go#L31).
 
 The Waku host checks that the peer is a mailserver and if this mailserver was selected by the user,
 if so the message will be marked as "Sent" in the UI.

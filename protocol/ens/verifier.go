@@ -6,9 +6,9 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/status-im/status-go/eth-node/types"
-	enstypes "github.com/status-im/status-go/eth-node/types/ens"
-	"github.com/status-im/status-go/protocol/common"
+	"github.com/planq-network/status-go/eth-node/types"
+	enstypes "github.com/planq-network/status-go/eth-node/types/ens"
+	"github.com/planq-network/status-go/protocol/common"
 )
 
 type Verifier struct {

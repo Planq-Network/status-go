@@ -3,7 +3,7 @@ package v0
 import (
 	gethcommon "github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/status-im/status-go/waku/common"
+	"github.com/planq-network/status-go/waku/common"
 )
 
 // MultiVersionResponse allows to decode response into chosen version.

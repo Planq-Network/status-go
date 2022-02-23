@@ -19,4 +19,4 @@ The payloads are encoded using [protocol-buffers](https://developers.google.com/
 
 ## History
 
-Originally this package was a dedicated repo called `status-protocol-go` and [was migrated](https://github.com/status-im/status-go/pull/1684) into `status-go`. The new `status-go/protocol` package maintained its own dependencies until [sub modules were removed](https://github.com/status-im/status-go/pull/1835/files) and the root go.mod file managed all dependencies for the entire `status-go` repo.   
+Originally this package was a dedicated repo called `status-protocol-go` and [was migrated](https://github.com/planq-network/status-go/pull/1684) into `status-go`. The new `status-go/protocol` package maintained its own dependencies until [sub modules were removed](https://github.com/planq-network/status-go/pull/1835/files) and the root go.mod file managed all dependencies for the entire `status-go` repo.   

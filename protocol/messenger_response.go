@@ -3,14 +3,14 @@ package protocol
 import (
 	"encoding/json"
 
-	"github.com/status-im/status-go/services/browsers"
+	"github.com/planq-network/status-go/services/browsers"
 
-	"github.com/status-im/status-go/appmetrics"
-	"github.com/status-im/status-go/protocol/common"
-	"github.com/status-im/status-go/protocol/communities"
-	"github.com/status-im/status-go/protocol/encryption/multidevice"
-	localnotifications "github.com/status-im/status-go/services/local-notifications"
-	"github.com/status-im/status-go/services/mailservers"
+	"github.com/planq-network/status-go/appmetrics"
+	"github.com/planq-network/status-go/protocol/common"
+	"github.com/planq-network/status-go/protocol/communities"
+	"github.com/planq-network/status-go/protocol/encryption/multidevice"
+	localnotifications "github.com/planq-network/status-go/services/local-notifications"
+	"github.com/planq-network/status-go/services/mailservers"
 )
 
 type RemovedMessage struct {

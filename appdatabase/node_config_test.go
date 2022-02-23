@@ -16,11 +16,11 @@ import (
 
 	"github.com/ethereum/go-ethereum/p2p/discv5"
 
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/nodecfg"
-	"github.com/status-im/status-go/params"
-	"github.com/status-im/status-go/protocol/pushnotificationserver"
-	"github.com/status-im/status-go/sqlite"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/nodecfg"
+	"github.com/planq-network/status-go/params"
+	"github.com/planq-network/status-go/protocol/pushnotificationserver"
+	"github.com/planq-network/status-go/sqlite"
 )
 
 func setupTestDB(t *testing.T) (*sql.DB, func()) {

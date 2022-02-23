@@ -10,17 +10,17 @@ import (
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/status-im/status-go/account"
-	"github.com/status-im/status-go/appdatabase"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/multiaccounts/accounts"
-	"github.com/status-im/status-go/params"
-	"github.com/status-im/status-go/services/permissions"
-	"github.com/status-im/status-go/t/utils"
-	"github.com/status-im/status-go/transactions/fake"
+	"github.com/planq-network/status-go/account"
+	"github.com/planq-network/status-go/appdatabase"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/multiaccounts/accounts"
+	"github.com/planq-network/status-go/params"
+	"github.com/planq-network/status-go/services/permissions"
+	"github.com/planq-network/status-go/t/utils"
+	"github.com/planq-network/status-go/transactions/fake"
 
 	gethrpc "github.com/ethereum/go-ethereum/rpc"
-	statusRPC "github.com/status-im/status-go/rpc"
+	statusRPC "github.com/planq-network/status-go/rpc"
 )
 
 func createDB(t *testing.T) (*sql.DB, func()) {

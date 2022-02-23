@@ -7,10 +7,10 @@ import (
 	"time"
 
 	"github.com/ethereum/go-ethereum/log"
-	gethbridge "github.com/status-im/status-go/eth-node/bridge/geth"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/services/ext"
-	waku "github.com/status-im/status-go/waku/common"
+	gethbridge "github.com/planq-network/status-go/eth-node/bridge/geth"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/services/ext"
+	waku "github.com/planq-network/status-go/waku/common"
 )
 
 const (

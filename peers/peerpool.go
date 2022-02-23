@@ -12,10 +12,10 @@ import (
 	"github.com/ethereum/go-ethereum/p2p/discv5"
 	"github.com/ethereum/go-ethereum/p2p/enode"
 
-	"github.com/status-im/status-go/discovery"
-	"github.com/status-im/status-go/params"
-	"github.com/status-im/status-go/peers/verifier"
-	"github.com/status-im/status-go/signal"
+	"github.com/planq-network/status-go/discovery"
+	"github.com/planq-network/status-go/params"
+	"github.com/planq-network/status-go/peers/verifier"
+	"github.com/planq-network/status-go/signal"
 )
 
 var (

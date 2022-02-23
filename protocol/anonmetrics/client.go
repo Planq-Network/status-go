@@ -10,10 +10,10 @@ import (
 	"github.com/golang/protobuf/proto"
 	"go.uber.org/zap"
 
-	"github.com/status-im/status-go/appmetrics"
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/protocol/common"
-	"github.com/status-im/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/appmetrics"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/protocol/common"
+	"github.com/planq-network/status-go/protocol/protobuf"
 )
 
 const ActiveClientPhrase = "yes i am wanting the activation of the anon metrics client, please thank you lots thank you"

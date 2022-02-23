@@ -16,16 +16,16 @@ import (
 
 	bindata "github.com/status-im/migrate/v4/source/go_bindata"
 
-	appmetricsDB "github.com/status-im/status-go/appmetrics"
-	gethbridge "github.com/status-im/status-go/eth-node/bridge/geth"
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/postgres"
-	"github.com/status-im/status-go/protocol/anonmetrics"
-	"github.com/status-im/status-go/protocol/anonmetrics/migrations"
-	"github.com/status-im/status-go/protocol/tt"
-	"github.com/status-im/status-go/services/appmetrics"
-	"github.com/status-im/status-go/waku"
+	appmetricsDB "github.com/planq-network/status-go/appmetrics"
+	gethbridge "github.com/planq-network/status-go/eth-node/bridge/geth"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/postgres"
+	"github.com/planq-network/status-go/protocol/anonmetrics"
+	"github.com/planq-network/status-go/protocol/anonmetrics/migrations"
+	"github.com/planq-network/status-go/protocol/tt"
+	"github.com/planq-network/status-go/services/appmetrics"
+	"github.com/planq-network/status-go/waku"
 )
 
 func TestMessengerAnonMetricsSuite(t *testing.T) {

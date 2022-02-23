@@ -8,15 +8,15 @@ If you just have a question, don't open an issue but rather ask us on our [Disco
 You just want to contribute something without reading tons of documentation, right? There're only a few useful links to start with.
 
 How [status-react](github.com/status-im/status-react) uses us:
-https://github.com/status-im/status-go/wiki/Notes-on-Bindings
+https://github.com/planq-network/status-go/wiki/Notes-on-Bindings
 
-Architecture: TBD in [#238](https://github.com/status-im/status-go/issues/238)
+Architecture: TBD in [#238](https://github.com/planq-network/status-go/issues/238)
 
 You can also discover more information in https://hackmd.io/s/SkZI0bXIb
 
 ## Workflow
 
-1. Pick an [issue](https://github.com/status-im/status-go/issues) to work on and drop a line there that you're working on that.
+1. Pick an [issue](https://github.com/planq-network/status-go/issues) to work on and drop a line there that you're working on that.
 2. Wait for an approve from one of core contributors.
 3. Fork the project and work right in the `develop` branch.
 4. Work on the issue and file a PR back into `develop`.

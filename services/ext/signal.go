@@ -1,10 +1,10 @@
 package ext
 
 import (
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/protocol"
-	"github.com/status-im/status-go/protocol/communities"
-	"github.com/status-im/status-go/signal"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/protocol"
+	"github.com/planq-network/status-go/protocol/communities"
+	"github.com/planq-network/status-go/signal"
 )
 
 // EnvelopeSignalHandler sends signals when envelope is sent or expired.

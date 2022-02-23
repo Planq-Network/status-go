@@ -5,7 +5,7 @@ import (
 
 	"go.uber.org/zap"
 
-	enstypes "github.com/status-im/status-go/eth-node/types/ens"
+	enstypes "github.com/planq-network/status-go/eth-node/types/ens"
 )
 
 // EnodeID is a unique identifier for each node.

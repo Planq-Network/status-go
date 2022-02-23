@@ -10,10 +10,10 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/eth-node/keystore"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/t/utils"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/keystore"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/t/utils"
 
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"

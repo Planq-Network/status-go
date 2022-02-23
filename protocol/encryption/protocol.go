@@ -10,12 +10,12 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/eth-node/types"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/types"
 
-	"github.com/status-im/status-go/protocol/encryption/multidevice"
-	"github.com/status-im/status-go/protocol/encryption/publisher"
-	"github.com/status-im/status-go/protocol/encryption/sharedsecret"
+	"github.com/planq-network/status-go/protocol/encryption/multidevice"
+	"github.com/planq-network/status-go/protocol/encryption/publisher"
+	"github.com/planq-network/status-go/protocol/encryption/sharedsecret"
 )
 
 //go:generate protoc --go_out=. ./protocol_message.proto

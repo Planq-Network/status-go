@@ -10,10 +10,10 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/event"
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/status-im/status-go/multiaccounts/accounts"
-	"github.com/status-im/status-go/rpc"
-	"github.com/status-im/status-go/services/wallet/async"
-	"github.com/status-im/status-go/services/wallet/chain"
+	"github.com/planq-network/status-go/multiaccounts/accounts"
+	"github.com/planq-network/status-go/rpc"
+	"github.com/planq-network/status-go/services/wallet/async"
+	"github.com/planq-network/status-go/services/wallet/chain"
 )
 
 type Controller struct {

@@ -12,9 +12,9 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/status-im/status-go/services/wallet/async"
-	"github.com/status-im/status-go/services/wallet/chain"
-	"github.com/status-im/status-go/services/wallet/ierc20"
+	"github.com/planq-network/status-go/services/wallet/async"
+	"github.com/planq-network/status-go/services/wallet/chain"
+	"github.com/planq-network/status-go/services/wallet/ierc20"
 )
 
 var requestTimeout = 20 * time.Second

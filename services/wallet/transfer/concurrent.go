@@ -11,7 +11,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/status-im/status-go/services/wallet/async"
+	"github.com/planq-network/status-go/services/wallet/async"
 )
 
 // NewConcurrentDownloader creates ConcurrentDownloader instance.

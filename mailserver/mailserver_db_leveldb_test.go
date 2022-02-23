@@ -9,8 +9,8 @@ import (
 	"github.com/stretchr/testify/require"
 
 	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/status-im/status-go/eth-node/types"
-	waku "github.com/status-im/status-go/waku/common"
+	"github.com/planq-network/status-go/eth-node/types"
+	waku "github.com/planq-network/status-go/waku/common"
 )
 
 func TestLevelDB_BuildIteratorWithTopic(t *testing.T) {

@@ -13,8 +13,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/ethclient"
 
-	"github.com/status-im/status-go/eth-node/crypto"
-	enstypes "github.com/status-im/status-go/eth-node/types/ens"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	enstypes "github.com/planq-network/status-go/eth-node/types/ens"
 )
 
 const (

@@ -3,7 +3,7 @@ package communities
 import (
 	"database/sql"
 
-	"github.com/status-im/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/protocol/protobuf"
 )
 
 type rawCommunityRow struct {

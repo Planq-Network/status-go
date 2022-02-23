@@ -9,10 +9,10 @@ import (
 	"github.com/ethereum/go-ethereum/event"
 
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/status-im/status-go/account"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/multiaccounts/accounts"
-	"github.com/status-im/status-go/params"
+	"github.com/planq-network/status-go/account"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/multiaccounts/accounts"
+	"github.com/planq-network/status-go/params"
 )
 
 const pathWalletRoot = "m/44'/60'/0'/0/0"

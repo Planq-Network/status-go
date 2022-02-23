@@ -8,7 +8,7 @@ import (
 	dr "github.com/status-im/doubleratchet"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/status-im/status-go/protocol/sqlite"
+	"github.com/planq-network/status-go/protocol/sqlite"
 )
 
 var (

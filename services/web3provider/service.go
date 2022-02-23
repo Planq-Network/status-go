@@ -6,15 +6,15 @@ import (
 	"github.com/ethereum/go-ethereum/p2p"
 	gethrpc "github.com/ethereum/go-ethereum/rpc"
 
-	"github.com/status-im/status-go/account"
-	"github.com/status-im/status-go/transactions"
+	"github.com/planq-network/status-go/account"
+	"github.com/planq-network/status-go/transactions"
 
-	"github.com/status-im/status-go/multiaccounts/accounts"
+	"github.com/planq-network/status-go/multiaccounts/accounts"
 
-	"github.com/status-im/status-go/params"
-	"github.com/status-im/status-go/rpc"
-	"github.com/status-im/status-go/services/permissions"
-	"github.com/status-im/status-go/services/rpcfilters"
+	"github.com/planq-network/status-go/params"
+	"github.com/planq-network/status-go/rpc"
+	"github.com/planq-network/status-go/services/permissions"
+	"github.com/planq-network/status-go/services/rpcfilters"
 )
 
 func NewService(appDB *sql.DB, rpcClient *rpc.Client, config *params.NodeConfig, accountsManager *account.GethManager, rpcFiltersSrvc *rpcfilters.Service, transactor *transactions.Transactor) *Service {

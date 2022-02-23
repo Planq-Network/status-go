@@ -4,9 +4,9 @@ import (
 	"errors"
 
 	"github.com/ethereum/go-ethereum/log"
-	userimages "github.com/status-im/status-go/images"
-	"github.com/status-im/status-go/protocol/images"
-	"github.com/status-im/status-go/protocol/protobuf"
+	userimages "github.com/planq-network/status-go/images"
+	"github.com/planq-network/status-go/protocol/images"
+	"github.com/planq-network/status-go/protocol/protobuf"
 )
 
 var (

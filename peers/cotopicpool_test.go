@@ -13,7 +13,7 @@ import (
 	"github.com/ethereum/go-ethereum/p2p/discv5"
 	"github.com/ethereum/go-ethereum/p2p/enode"
 
-	"github.com/status-im/status-go/params"
+	"github.com/planq-network/status-go/params"
 )
 
 type CacheOnlyTopicPoolSuite struct {

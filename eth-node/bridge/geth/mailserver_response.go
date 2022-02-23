@@ -1,9 +1,9 @@
 package gethbridge
 
 import (
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/waku"
-	"github.com/status-im/status-go/wakuv2"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/waku"
+	"github.com/planq-network/status-go/wakuv2"
 )
 
 // NewWakuMailServerResponseWrapper returns a types.MailServerResponse object that mimics Geth's MailServerResponse

@@ -5,10 +5,10 @@ import (
 	"crypto/sha256"
 	"time"
 
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/eth-node/types"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/multiaccounts"
 	"github.com/status-im/status-go/extkeys"
-	"github.com/status-im/status-go/multiaccounts"
 )
 
 type Account struct {

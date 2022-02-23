@@ -3,8 +3,8 @@ package ext
 import (
 	"go.uber.org/zap"
 
-	"github.com/status-im/status-go/eth-node/types"
-	enstypes "github.com/status-im/status-go/eth-node/types/ens"
+	"github.com/planq-network/status-go/eth-node/types"
+	enstypes "github.com/planq-network/status-go/eth-node/types/ens"
 )
 
 type TestNodeWrapper struct {

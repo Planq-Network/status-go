@@ -19,15 +19,15 @@ import (
 	"github.com/ethereum/go-ethereum/p2p"
 	"github.com/ethereum/go-ethereum/p2p/enode"
 
-	"github.com/status-im/status-go/api"
-	gethbridge "github.com/status-im/status-go/eth-node/bridge/geth"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/logutils"
-	"github.com/status-im/status-go/params"
-	"github.com/status-im/status-go/rpc"
-	"github.com/status-im/status-go/services/ext"
-	"github.com/status-im/status-go/services/wakuext"
-	"github.com/status-im/status-go/t/helpers"
+	"github.com/planq-network/status-go/api"
+	gethbridge "github.com/planq-network/status-go/eth-node/bridge/geth"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/logutils"
+	"github.com/planq-network/status-go/params"
+	"github.com/planq-network/status-go/rpc"
+	"github.com/planq-network/status-go/services/ext"
+	"github.com/planq-network/status-go/services/wakuext"
+	"github.com/planq-network/status-go/t/helpers"
 )
 
 const (

@@ -1,3 +1,4 @@
+//go:build nimbus
 // +build nimbus
 
 package shhext
@@ -5,15 +6,15 @@ package shhext
 import (
 	"context"
 
-	"github.com/status-im/status-go/protocol/common"
+	"github.com/planq-network/status-go/protocol/common"
 
 	"github.com/ethereum/go-ethereum/log"
 
-	"github.com/status-im/status-go/eth-node/types"
-	enstypes "github.com/status-im/status-go/eth-node/types/ens"
-	"github.com/status-im/status-go/protocol"
-	"github.com/status-im/status-go/protocol/encryption/multidevice"
-	"github.com/status-im/status-go/protocol/transport"
+	"github.com/planq-network/status-go/eth-node/types"
+	enstypes "github.com/planq-network/status-go/eth-node/types/ens"
+	"github.com/planq-network/status-go/protocol"
+	"github.com/planq-network/status-go/protocol/encryption/multidevice"
+	"github.com/planq-network/status-go/protocol/transport"
 )
 
 // -----

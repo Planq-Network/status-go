@@ -2,8 +2,8 @@ package wakuv2ext
 
 import (
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/services/ext"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/services/ext"
 )
 
 // PublicAPI extends waku public API.

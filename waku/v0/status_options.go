@@ -10,7 +10,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/rlp"
 
-	"github.com/status-im/status-go/waku/common"
+	"github.com/planq-network/status-go/waku/common"
 )
 
 // statusOptionKey is a current type used in StatusOptions as a key.

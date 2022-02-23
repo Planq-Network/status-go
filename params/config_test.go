@@ -12,8 +12,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/status-im/status-go/params"
-	"github.com/status-im/status-go/t/utils"
+	"github.com/planq-network/status-go/params"
+	"github.com/planq-network/status-go/t/utils"
 )
 
 func TestNewNodeConfigWithDefaults(t *testing.T) {

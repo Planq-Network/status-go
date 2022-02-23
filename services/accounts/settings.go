@@ -3,9 +3,9 @@ package accounts
 import (
 	"context"
 
-	"github.com/status-im/status-go/multiaccounts/accounts"
-	"github.com/status-im/status-go/nodecfg"
-	"github.com/status-im/status-go/params"
+	"github.com/planq-network/status-go/multiaccounts/accounts"
+	"github.com/planq-network/status-go/nodecfg"
+	"github.com/planq-network/status-go/params"
 )
 
 func NewSettingsAPI(db *accounts.Database) *SettingsAPI {

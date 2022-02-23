@@ -5,9 +5,9 @@ import (
 
 	"github.com/ethereum/go-ethereum/common/hexutil"
 
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/wakuv2"
-	wakucommon "github.com/status-im/status-go/wakuv2/common"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/wakuv2"
+	wakucommon "github.com/planq-network/status-go/wakuv2/common"
 )
 
 type gethPublicWakuV2APIWrapper struct {

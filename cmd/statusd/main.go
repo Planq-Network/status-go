@@ -20,17 +20,17 @@ import (
 	"github.com/ethereum/go-ethereum/log"
 	gethmetrics "github.com/ethereum/go-ethereum/metrics"
 
-	"github.com/status-im/status-go/api"
-	"github.com/status-im/status-go/appdatabase"
-	gethbridge "github.com/status-im/status-go/eth-node/bridge/geth"
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/logutils"
-	"github.com/status-im/status-go/metrics"
-	nodemetrics "github.com/status-im/status-go/metrics/node"
-	"github.com/status-im/status-go/node"
-	"github.com/status-im/status-go/params"
-	"github.com/status-im/status-go/profiling"
-	"github.com/status-im/status-go/protocol"
+	"github.com/planq-network/status-go/api"
+	"github.com/planq-network/status-go/appdatabase"
+	gethbridge "github.com/planq-network/status-go/eth-node/bridge/geth"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/logutils"
+	"github.com/planq-network/status-go/metrics"
+	nodemetrics "github.com/planq-network/status-go/metrics/node"
+	"github.com/planq-network/status-go/node"
+	"github.com/planq-network/status-go/params"
+	"github.com/planq-network/status-go/profiling"
+	"github.com/planq-network/status-go/protocol"
 )
 
 const (

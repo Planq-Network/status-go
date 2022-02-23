@@ -1,7 +1,7 @@
 # Status bindings for go-ethereum
 
-[![GoDoc](https://godoc.org/github.com/status-im/status-go?status.svg)](https://godoc.org/github.com/status-im/status-go)
-[![Build Status](https://travis-ci.org/status-im/status-go.svg?branch=develop)](https://travis-ci.org/status-im/status-go)
+[![GoDoc](https://godoc.org/github.com/planq-network/status-go?status.svg)](https://godoc.org/github.com/planq-network/status-go)
+[![Build Status](https://travis-ci.org/planq-network/status-go.svg?branch=develop)](https://travis-ci.org/planq-network/status-go)
 
 # Docs
 
@@ -15,4 +15,4 @@
 
 # License
 
-[Mozilla Public License 2.0](https://github.com/status-im/status-go/blob/develop/LICENSE.md)
+[Mozilla Public License 2.0](https://github.com/planq-network/status-go/blob/develop/LICENSE.md)

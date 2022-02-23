@@ -10,8 +10,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/p2p/enode"
 
-	"github.com/status-im/status-go/db"
-	"github.com/status-im/status-go/eth-node/types"
+	"github.com/planq-network/status-go/db"
+	"github.com/planq-network/status-go/eth-node/types"
 )
 
 // NewPeerRecord returns instance of the peer record.

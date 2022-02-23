@@ -16,9 +16,9 @@ import (
 	"github.com/status-im/markdown"
 	"github.com/status-im/markdown/ast"
 
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/images"
-	"github.com/status-im/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/images"
+	"github.com/planq-network/status-go/protocol/protobuf"
 )
 
 // QuotedMessage contains the original text of the message replied to

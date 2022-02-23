@@ -1,6 +1,6 @@
 package subscriptions
 
-import "github.com/status-im/status-go/signal"
+import "github.com/planq-network/status-go/signal"
 
 type filterSignal struct {
 	filterID string

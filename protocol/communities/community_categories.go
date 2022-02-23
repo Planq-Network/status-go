@@ -3,7 +3,7 @@ package communities
 import (
 	"sort"
 
-	"github.com/status-im/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/protocol/protobuf"
 )
 
 func (o *Community) CreateCategory(categoryID string, categoryName string, chatIDs []string) (*CommunityChanges, error) {

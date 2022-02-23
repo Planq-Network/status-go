@@ -10,8 +10,8 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/event"
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/status-im/status-go/services/wallet/async"
-	"github.com/status-im/status-go/services/wallet/chain"
+	"github.com/planq-network/status-go/services/wallet/async"
+	"github.com/planq-network/status-go/services/wallet/chain"
 )
 
 var (

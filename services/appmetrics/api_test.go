@@ -7,8 +7,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/status-im/status-go/appdatabase"
-	"github.com/status-im/status-go/appmetrics"
+	"github.com/planq-network/status-go/appdatabase"
+	"github.com/planq-network/status-go/appmetrics"
 
 	"github.com/stretchr/testify/require"
 )
