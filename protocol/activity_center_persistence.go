@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/protocol/common"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/protocol/common"
 )
 
 func (db sqlitePersistence) DeleteActivityCenterNotification(id []byte) error {

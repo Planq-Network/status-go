@@ -11,12 +11,12 @@ import (
 	"github.com/golang/protobuf/proto"
 	"go.uber.org/zap"
 
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/images"
-	"github.com/status-im/status-go/protocol/common"
-	"github.com/status-im/status-go/protocol/protobuf"
-	"github.com/status-im/status-go/protocol/v1"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/images"
+	"github.com/planq-network/status-go/protocol/common"
+	"github.com/planq-network/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/protocol/v1"
 )
 
 const signatureLength = 65

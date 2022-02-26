@@ -12,7 +12,7 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/status-im/status-go/services/wallet/chain"
+	"github.com/planq-network/status-go/services/wallet/chain"
 )
 
 // Type type of the asset that was transferred.

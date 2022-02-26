@@ -5,8 +5,8 @@ import (
 	crand "crypto/rand"
 	"errors"
 
-	"github.com/status-im/status-go/protocol/common"
-	"github.com/status-im/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/protocol/common"
+	"github.com/planq-network/status-go/protocol/protobuf"
 )
 
 func EncryptIdentityImagesWithContactPubKeys(iis map[string]*protobuf.IdentityImage, m *Messenger) (err error) {

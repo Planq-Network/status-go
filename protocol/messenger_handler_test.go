@@ -8,14 +8,14 @@ import (
 	"github.com/stretchr/testify/suite"
 	"go.uber.org/zap"
 
-	gethbridge "github.com/status-im/status-go/eth-node/bridge/geth"
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/protocol/protobuf"
-	"github.com/status-im/status-go/protocol/tt"
-	v1protocol "github.com/status-im/status-go/protocol/v1"
-	localnotifications "github.com/status-im/status-go/services/local-notifications"
-	"github.com/status-im/status-go/waku"
+	gethbridge "github.com/planq-network/status-go/eth-node/bridge/geth"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/protocol/tt"
+	v1protocol "github.com/planq-network/status-go/protocol/v1"
+	localnotifications "github.com/planq-network/status-go/services/local-notifications"
+	"github.com/planq-network/status-go/waku"
 )
 
 func TestEventToSystemMessageSuite(t *testing.T) {

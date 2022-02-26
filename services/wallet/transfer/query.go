@@ -7,7 +7,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/status-im/status-go/services/wallet/bigint"
+	"github.com/planq-network/status-go/services/wallet/bigint"
 )
 
 const baseTransfersQuery = "SELECT hash, type, blk_hash, blk_number, timestamp, address, tx, sender, receipt, log, network_id FROM transfers"

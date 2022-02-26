@@ -14,11 +14,11 @@ import (
 
 	"github.com/ethereum/go-ethereum/rlp"
 
-	gethbridge "github.com/status-im/status-go/eth-node/bridge/geth"
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/postgres"
-	waku "github.com/status-im/status-go/waku/common"
+	gethbridge "github.com/planq-network/status-go/eth-node/bridge/geth"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/postgres"
+	waku "github.com/planq-network/status-go/waku/common"
 )
 
 func TestMailServerPostgresDBSuite(t *testing.T) {

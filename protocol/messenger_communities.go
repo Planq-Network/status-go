@@ -9,13 +9,13 @@ import (
 	"github.com/golang/protobuf/proto"
 	"go.uber.org/zap"
 
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/protocol/common"
-	"github.com/status-im/status-go/protocol/communities"
-	"github.com/status-im/status-go/protocol/protobuf"
-	"github.com/status-im/status-go/protocol/requests"
-	"github.com/status-im/status-go/protocol/transport"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/protocol/common"
+	"github.com/planq-network/status-go/protocol/communities"
+	"github.com/planq-network/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/protocol/requests"
+	"github.com/planq-network/status-go/protocol/transport"
 )
 
 func (m *Messenger) publishOrg(org *communities.Community) error {

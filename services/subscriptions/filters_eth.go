@@ -3,7 +3,7 @@ package subscriptions
 import (
 	"fmt"
 
-	"github.com/status-im/status-go/rpc"
+	"github.com/planq-network/status-go/rpc"
 )
 
 type ethFilter struct {

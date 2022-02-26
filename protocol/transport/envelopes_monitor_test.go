@@ -9,8 +9,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/p2p/enode"
 
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/eth-node/types"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/types"
 )
 
 var (

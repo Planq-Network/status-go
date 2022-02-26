@@ -3,7 +3,7 @@ package requests
 import (
 	"errors"
 
-	"github.com/status-im/status-go/eth-node/types"
+	"github.com/planq-network/status-go/eth-node/types"
 )
 
 var ErrEditCommunityCategoryInvalidCommunityID = errors.New("edit-community-category: invalid community id")

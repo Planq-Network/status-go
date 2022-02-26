@@ -9,7 +9,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/status-im/status-go/appdatabase"
+	"github.com/planq-network/status-go/appdatabase"
 )
 
 func setupTestSavedAddressesDB(t *testing.T) (*SavedAddressesManager, func()) {

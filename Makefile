@@ -40,12 +40,12 @@ AUTHOR ?= $(shell git config user.email || echo $$USER)
 
 ENABLE_METRICS ?= true
 BUILD_FLAGS ?= $(shell echo "-ldflags='\
-	-X github.com/status-im/status-go/params.Version=$(RELEASE_TAG:v%=%) \
-	-X github.com/status-im/status-go/params.GitCommit=$(GIT_COMMIT) \
-	-X github.com/status-im/status-go/vendor/github.com/ethereum/go-ethereum/metrics.EnabledStr=$(ENABLE_METRICS)'")
+	-X github.com/planq-network/status-go/params.Version=$(RELEASE_TAG:v%=%) \
+	-X github.com/planq-network/status-go/params.GitCommit=$(GIT_COMMIT) \
+	-X github.com/planq-network/status-go/vendor/github.com/ethereum/go-ethereum/metrics.EnabledStr=$(ENABLE_METRICS)'")
 BUILD_FLAGS_MOBILE ?= $(shell echo "-ldflags='\
-	-X github.com/status-im/status-go/params.Version=$(RELEASE_TAG:v%=%) \
-	-X github.com/status-im/status-go/params.GitCommit=$(GIT_COMMIT)'")
+	-X github.com/planq-network/status-go/params.Version=$(RELEASE_TAG:v%=%) \
+	-X github.com/planq-network/status-go/params.GitCommit=$(GIT_COMMIT)'")
 
 networkid ?= StatusChain
 gotest_extraflags =
@@ -56,7 +56,7 @@ STATUSD_PRUNE_IMAGE_NAME ?= statusteam/statusd-prune
 
 DOCKER_IMAGE_CUSTOM_TAG ?= $(RELEASE_TAG)
 
-DOCKER_TEST_WORKDIR = /go/src/github.com/status-im/status-go/
+DOCKER_TEST_WORKDIR = /go/src/github.com/planq-network/status-go/
 DOCKER_TEST_IMAGE = golang:1.13
 
 # This is a code for automatic help generator.
@@ -124,7 +124,7 @@ statusgo-android: ##@cross-compile Build status-go for Android
 		-target=android -ldflags="-s -w" \
 		$(BUILD_FLAGS_MOBILE) \
 		-o build/bin/statusgo.aar \
-		github.com/status-im/status-go/mobile
+		github.com/planq-network/status-go/mobile
 	@echo "Android cross compilation done in build/bin/statusgo.aar"
 
 statusgo-ios: ##@cross-compile Build status-go for iOS
@@ -135,7 +135,7 @@ statusgo-ios: ##@cross-compile Build status-go for iOS
 		-target=ios -ldflags="-s -w" \
 		$(BUILD_FLAGS_MOBILE) \
 		-o build/bin/Statusgo.framework \
-		github.com/status-im/status-go/mobile
+		github.com/planq-network/status-go/mobile
 	@echo "iOS framework cross compilation done in build/bin/Statusgo.framework"
 
 statusgo-library: ##@cross-compile Build status-go as static library for current platform
@@ -274,7 +274,7 @@ lint-fix:
 		-and -not -name 'migrations.go' \
 		-and -not -wholename '*/vendor/*' \
 		-exec goimports \
-		-local 'github.com/ethereum/go-ethereum,github.com/status-im/status-go,github.com/status-im/markdown' \
+		-local 'github.com/ethereum/go-ethereum,github.com/planq-network/status-go,github.com/status-im/markdown' \
 		-w {} \;
 	$(MAKE) vendor
 

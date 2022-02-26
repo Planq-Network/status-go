@@ -4,22 +4,22 @@ import (
 	"database/sql"
 	"encoding/json"
 
-	"github.com/status-im/status-go/services/browsers"
+	"github.com/planq-network/status-go/services/browsers"
 
 	"go.uber.org/zap"
 
-	"github.com/status-im/status-go/appdatabase/migrations"
-	"github.com/status-im/status-go/multiaccounts"
-	"github.com/status-im/status-go/multiaccounts/accounts"
-	"github.com/status-im/status-go/params"
-	"github.com/status-im/status-go/protocol/anonmetrics"
-	"github.com/status-im/status-go/protocol/common"
-	"github.com/status-im/status-go/protocol/communities"
-	"github.com/status-im/status-go/protocol/protobuf"
-	"github.com/status-im/status-go/protocol/pushnotificationclient"
-	"github.com/status-im/status-go/protocol/pushnotificationserver"
-	"github.com/status-im/status-go/protocol/transport"
-	"github.com/status-im/status-go/services/mailservers"
+	"github.com/planq-network/status-go/appdatabase/migrations"
+	"github.com/planq-network/status-go/multiaccounts"
+	"github.com/planq-network/status-go/multiaccounts/accounts"
+	"github.com/planq-network/status-go/params"
+	"github.com/planq-network/status-go/protocol/anonmetrics"
+	"github.com/planq-network/status-go/protocol/common"
+	"github.com/planq-network/status-go/protocol/communities"
+	"github.com/planq-network/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/protocol/pushnotificationclient"
+	"github.com/planq-network/status-go/protocol/pushnotificationserver"
+	"github.com/planq-network/status-go/protocol/transport"
+	"github.com/planq-network/status-go/services/mailservers"
 )
 
 type MessageDeliveredHandler func(string, string)

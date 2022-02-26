@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/status-im/status-go/eth-node/types"
+	"github.com/planq-network/status-go/eth-node/types"
 )
 
 func TestSendTxArgsValidity(t *testing.T) {

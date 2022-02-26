@@ -10,8 +10,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/status-im/status-go/appdatabase"
-	"github.com/status-im/status-go/services/wallet/bigint"
+	"github.com/planq-network/status-go/appdatabase"
+	"github.com/planq-network/status-go/services/wallet/bigint"
 )
 
 func setupTestTransactionDB(t *testing.T) (*TransactionManager, func()) {

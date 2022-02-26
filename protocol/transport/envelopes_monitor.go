@@ -7,7 +7,7 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/status-im/status-go/eth-node/types"
+	"github.com/planq-network/status-go/eth-node/types"
 )
 
 // EnvelopeState in local tracker

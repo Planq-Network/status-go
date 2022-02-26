@@ -7,9 +7,9 @@ import (
 
 	"github.com/golang/protobuf/proto"
 
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/protocol/protobuf"
 )
 
 // EmojiReaction represents an emoji reaction from a user in the application layer, used for persistence, querying and

@@ -4,16 +4,16 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/status-im/status-go/protocol/requests"
+	"github.com/planq-network/status-go/protocol/requests"
 
 	"github.com/golang/protobuf/proto"
 	_ "github.com/mutecomm/go-sqlcipher" // require go-sqlcipher that overrides default implementation
 
 	"github.com/stretchr/testify/suite"
 
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/protocol/protobuf"
-	"github.com/status-im/status-go/protocol/sqlite"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/protocol/sqlite"
 )
 
 func TestManagerSuite(t *testing.T) {

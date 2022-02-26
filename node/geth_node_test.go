@@ -12,8 +12,8 @@ import (
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/p2p/enode"
 
-	"github.com/status-im/status-go/params"
-	"github.com/status-im/status-go/t/utils"
+	"github.com/planq-network/status-go/params"
+	"github.com/planq-network/status-go/t/utils"
 )
 
 func TestMakeNodeDefaultConfig(t *testing.T) {

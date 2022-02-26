@@ -5,8 +5,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/status-im/status-go/protocol/common"
-	"github.com/status-im/status-go/protocol/encryption/multidevice"
+	"github.com/planq-network/status-go/protocol/common"
+	"github.com/planq-network/status-go/protocol/encryption/multidevice"
 )
 
 func TestMessengerResponseMergeChats(t *testing.T) {

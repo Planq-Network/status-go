@@ -17,17 +17,17 @@ import (
 
 	gethcrypto "github.com/ethereum/go-ethereum/crypto"
 
-	"github.com/status-im/status-go/connection"
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/multiaccounts"
-	"github.com/status-im/status-go/multiaccounts/accounts"
-	"github.com/status-im/status-go/node"
-	"github.com/status-im/status-go/params"
-	"github.com/status-im/status-go/rpc"
-	"github.com/status-im/status-go/services/typeddata"
-	"github.com/status-im/status-go/t/utils"
-	"github.com/status-im/status-go/transactions"
+	"github.com/planq-network/status-go/connection"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/multiaccounts"
+	"github.com/planq-network/status-go/multiaccounts/accounts"
+	"github.com/planq-network/status-go/node"
+	"github.com/planq-network/status-go/params"
+	"github.com/planq-network/status-go/rpc"
+	"github.com/planq-network/status-go/services/typeddata"
+	"github.com/planq-network/status-go/t/utils"
+	"github.com/planq-network/status-go/transactions"
 )
 
 var (

@@ -14,9 +14,9 @@ import (
 	"github.com/ethereum/go-ethereum/log"
 	gethrpc "github.com/ethereum/go-ethereum/rpc"
 
-	"github.com/status-im/status-go/params"
-	"github.com/status-im/status-go/rpc/network"
-	"github.com/status-im/status-go/services/rpcstats"
+	"github.com/planq-network/status-go/params"
+	"github.com/planq-network/status-go/rpc/network"
+	"github.com/planq-network/status-go/services/rpcstats"
 )
 
 const (

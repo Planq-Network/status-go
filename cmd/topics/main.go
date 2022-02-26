@@ -4,7 +4,7 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"github.com/status-im/status-go/protocol/transport"
+	"github.com/planq-network/status-go/protocol/transport"
 )
 
 func main() {

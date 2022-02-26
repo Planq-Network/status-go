@@ -10,9 +10,9 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/status-im/status-go/services/wallet/transfer"
-	"github.com/status-im/status-go/signal"
-	"github.com/status-im/status-go/t/utils"
+	"github.com/planq-network/status-go/services/wallet/transfer"
+	"github.com/planq-network/status-go/signal"
+	"github.com/planq-network/status-go/t/utils"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"

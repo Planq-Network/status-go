@@ -19,22 +19,22 @@ import (
 	"github.com/ethereum/go-ethereum/log"
 	signercore "github.com/ethereum/go-ethereum/signer/core"
 
-	"github.com/status-im/status-go/account"
-	"github.com/status-im/status-go/appdatabase"
-	"github.com/status-im/status-go/connection"
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/logutils"
-	"github.com/status-im/status-go/multiaccounts"
-	"github.com/status-im/status-go/multiaccounts/accounts"
-	"github.com/status-im/status-go/node"
-	"github.com/status-im/status-go/nodecfg"
-	"github.com/status-im/status-go/params"
-	"github.com/status-im/status-go/rpc"
-	"github.com/status-im/status-go/services/personal"
-	"github.com/status-im/status-go/services/typeddata"
-	"github.com/status-im/status-go/signal"
-	"github.com/status-im/status-go/transactions"
+	"github.com/planq-network/status-go/account"
+	"github.com/planq-network/status-go/appdatabase"
+	"github.com/planq-network/status-go/connection"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/logutils"
+	"github.com/planq-network/status-go/multiaccounts"
+	"github.com/planq-network/status-go/multiaccounts/accounts"
+	"github.com/planq-network/status-go/node"
+	"github.com/planq-network/status-go/nodecfg"
+	"github.com/planq-network/status-go/params"
+	"github.com/planq-network/status-go/rpc"
+	"github.com/planq-network/status-go/services/personal"
+	"github.com/planq-network/status-go/services/typeddata"
+	"github.com/planq-network/status-go/signal"
+	"github.com/planq-network/status-go/transactions"
 )
 
 var (
@@ -240,7 +240,7 @@ func (b *GethStatusBackend) ensureAppDBOpened(account multiaccounts.Account, pas
 		return errors.New("root datadir wasn't provided")
 	}
 
-	// Migrate file path to fix issue https://github.com/status-im/status-go/issues/2027
+	// Migrate file path to fix issue https://github.com/planq-network/status-go/issues/2027
 	oldPath := filepath.Join(b.rootDataDir, fmt.Sprintf("app-%x.sql", account.KeyUID))
 	newPath := filepath.Join(b.rootDataDir, fmt.Sprintf("%s.db", account.KeyUID))
 
@@ -471,7 +471,7 @@ func (b *GethStatusBackend) ExportUnencryptedDatabase(acc multiaccounts.Account,
 		return errors.New("root datadir wasn't provided")
 	}
 
-	// Migrate file path to fix issue https://github.com/status-im/status-go/issues/2027
+	// Migrate file path to fix issue https://github.com/planq-network/status-go/issues/2027
 	oldPath := filepath.Join(b.rootDataDir, fmt.Sprintf("app-%x.sql", acc.KeyUID))
 	newPath := filepath.Join(b.rootDataDir, fmt.Sprintf("%s.db", acc.KeyUID))
 
@@ -729,7 +729,7 @@ func (b *GethStatusBackend) startNode(config *params.NodeConfig) (err error) {
 	if err = b.statusNode.StartWithOptions(config, node.StartOptions{
 		// The peers discovery protocols are started manually after
 		// `node.ready` signal is sent.
-		// It was discussed in https://github.com/status-im/status-go/pull/1333.
+		// It was discussed in https://github.com/planq-network/status-go/pull/1333.
 		StartDiscovery:  false,
 		AccountsManager: manager,
 	}); err != nil {

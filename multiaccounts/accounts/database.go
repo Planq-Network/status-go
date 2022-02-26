@@ -6,10 +6,10 @@ import (
 	"encoding/json"
 	"errors"
 
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/nodecfg"
-	"github.com/status-im/status-go/params"
-	"github.com/status-im/status-go/sqlite"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/nodecfg"
+	"github.com/planq-network/status-go/params"
+	"github.com/planq-network/status-go/sqlite"
 )
 
 const (

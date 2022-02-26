@@ -4,7 +4,7 @@ import (
 	"github.com/ethereum/go-ethereum/p2p"
 	"github.com/ethereum/go-ethereum/rpc"
 
-	"github.com/status-im/status-go/multiaccounts/accounts"
+	"github.com/planq-network/status-go/multiaccounts/accounts"
 )
 
 // Service represents out own implementation of personal sign operations.

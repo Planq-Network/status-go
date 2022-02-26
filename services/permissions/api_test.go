@@ -11,7 +11,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/status-im/status-go/appdatabase"
+	"github.com/planq-network/status-go/appdatabase"
 )
 
 func setupTestDB(t *testing.T) (*Database, func()) {

@@ -11,11 +11,11 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	coretypes "github.com/status-im/status-go/eth-node/core/types"
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/protocol/common"
-	"github.com/status-im/status-go/protocol/tt"
+	coretypes "github.com/planq-network/status-go/eth-node/core/types"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/protocol/common"
+	"github.com/planq-network/status-go/protocol/tt"
 )
 
 func padArray(bb []byte, size int) []byte {

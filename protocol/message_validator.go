@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/status-im/status-go/protocol/protobuf"
-	"github.com/status-im/status-go/protocol/v1"
+	"github.com/planq-network/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/protocol/v1"
 )
 
 const maxChatMessageTextLength = 4096

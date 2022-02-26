@@ -5,7 +5,7 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"github.com/status-im/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/crypto"
 )
 
 const poly uint64 = 0xB8

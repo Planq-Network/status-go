@@ -1,7 +1,7 @@
 package audio
 
 import (
-	"github.com/status-im/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/protocol/protobuf"
 )
 
 func aac(buf []byte) bool {

@@ -10,9 +10,9 @@ import (
 	"github.com/status-im/go-waku/waku/v2/protocol/store"
 
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/wakuv2"
-	wakucommon "github.com/status-im/status-go/wakuv2/common"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/wakuv2"
+	wakucommon "github.com/planq-network/status-go/wakuv2/common"
 )
 
 type gethWakuV2Wrapper struct {

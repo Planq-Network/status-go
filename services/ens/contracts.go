@@ -4,10 +4,10 @@ import (
 	"errors"
 
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/status-im/status-go/rpc"
-	"github.com/status-im/status-go/services/ens/erc20"
-	"github.com/status-im/status-go/services/ens/registrar"
-	"github.com/status-im/status-go/services/ens/resolver"
+	"github.com/planq-network/status-go/rpc"
+	"github.com/planq-network/status-go/services/ens/erc20"
+	"github.com/planq-network/status-go/services/ens/registrar"
+	"github.com/planq-network/status-go/services/ens/resolver"
 )
 
 var errorNotAvailableOnChainID = errors.New("not available for chainID")

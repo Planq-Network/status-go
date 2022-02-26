@@ -19,7 +19,7 @@
 package waku
 
 import (
-	"github.com/status-im/status-go/waku/common"
+	"github.com/planq-network/status-go/waku/common"
 )
 
 // Config represents the configuration state of a waku node.

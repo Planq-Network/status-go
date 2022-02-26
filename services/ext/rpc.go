@@ -6,8 +6,8 @@ package ext
 import (
 	"crypto/ecdsa"
 
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/eth-node/types"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/types"
 )
 
 // SendPublicMessageRPC represents the RPC payload for the SendPublicMessage RPC method
@@ -17,7 +17,7 @@ type SendPublicMessageRPC struct {
 	Payload types.HexBytes
 }
 
-// TODO: implement with accordance to https://github.com/status-im/status-go/protocol/issues/28.
+// TODO: implement with accordance to https://github.com/planq-network/status-go/protocol/issues/28.
 func (m SendPublicMessageRPC) ID() string { return m.Chat }
 
 func (m SendPublicMessageRPC) PublicName() string { return m.Chat }
@@ -33,7 +33,7 @@ type SendDirectMessageRPC struct {
 	DH      bool // TODO: make sure to remove safely
 }
 
-// TODO: implement with accordance to https://github.com/status-im/status-go/protocol/issues/28.
+// TODO: implement with accordance to https://github.com/planq-network/status-go/protocol/issues/28.
 func (m SendDirectMessageRPC) ID() string { return "" }
 
 func (m SendDirectMessageRPC) PublicName() string { return "" }

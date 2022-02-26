@@ -16,8 +16,8 @@ import (
 	"github.com/ethereum/go-ethereum/p2p/enode"
 	"github.com/ethereum/go-ethereum/p2p/nat"
 
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/params"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/params"
 )
 
 // Errors related to node and services creation.

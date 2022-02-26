@@ -32,10 +32,10 @@ import (
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/rlp"
 
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/params"
-	waku "github.com/status-im/status-go/waku"
-	wakucommon "github.com/status-im/status-go/waku/common"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/params"
+	waku "github.com/planq-network/status-go/waku"
+	wakucommon "github.com/planq-network/status-go/waku/common"
 )
 
 const powRequirement = 0.00001

@@ -11,12 +11,12 @@ import (
 
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/protocol/encryption"
-	"github.com/status-im/status-go/protocol/encryption/multidevice"
-	"github.com/status-im/status-go/protocol/encryption/sharedsecret"
-	"github.com/status-im/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/protocol/encryption"
+	"github.com/planq-network/status-go/protocol/encryption/multidevice"
+	"github.com/planq-network/status-go/protocol/encryption/sharedsecret"
+	"github.com/planq-network/status-go/protocol/protobuf"
 )
 
 type StatusMessageT int

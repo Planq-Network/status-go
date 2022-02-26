@@ -3,7 +3,7 @@ package tt
 import (
 	"sync"
 
-	"github.com/status-im/status-go/protocol/zaputil"
+	"github.com/planq-network/status-go/protocol/zaputil"
 
 	"go.uber.org/zap"
 )

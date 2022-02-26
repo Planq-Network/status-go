@@ -3,8 +3,8 @@ package protocol
 import (
 	"sync"
 
-	"github.com/status-im/status-go/protocol/encryption/multidevice"
-	"github.com/status-im/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/protocol/encryption/multidevice"
+	"github.com/planq-network/status-go/protocol/protobuf"
 )
 
 /*

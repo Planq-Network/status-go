@@ -1,7 +1,7 @@
 package ext
 
 import (
-	"github.com/status-im/status-go/eth-node/types"
+	"github.com/planq-network/status-go/eth-node/types"
 )
 
 type failureMessage struct {

@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 
-	"github.com/status-im/status-go/protocol/common"
-	"github.com/status-im/status-go/protocol/protobuf"
-	"github.com/status-im/status-go/protocol/requests"
+	"github.com/planq-network/status-go/protocol/common"
+	"github.com/planq-network/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/protocol/requests"
 )
 
 var ErrInvalidEditOrDeleteAuthor = errors.New("sender is not the author of the message")

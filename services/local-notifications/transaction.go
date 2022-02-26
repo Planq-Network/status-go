@@ -9,9 +9,9 @@ import (
 	"github.com/ethereum/go-ethereum/event"
 	"github.com/ethereum/go-ethereum/log"
 
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/multiaccounts/accounts"
-	"github.com/status-im/status-go/services/wallet/transfer"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/multiaccounts/accounts"
+	"github.com/planq-network/status-go/services/wallet/transfer"
 )
 
 type transactionState string

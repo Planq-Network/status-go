@@ -14,7 +14,7 @@ import (
 	"github.com/vacp2p/mvds/transport"
 	"go.uber.org/zap"
 
-	datasyncpeer "github.com/status-im/status-go/protocol/datasync/peer"
+	datasyncpeer "github.com/planq-network/status-go/protocol/datasync/peer"
 )
 
 const backoffInterval = 30

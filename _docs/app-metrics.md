@@ -16,7 +16,7 @@ These data points are saved in the local sqlite database, and are not transferre
 ### Validation and audit
 The interesting bit is the validation process, which serves two purposes:
 1. validates the metric before saving it to local db: ensures that we don't capture any sensitive information
-2. acts as an audit layer: anyone who wishes to check the kind of data being captured, can do so by auditing just one file: https://github.com/status-im/status-go/blob/develop/appmetrics/validators.go
+2. acts as an audit layer: anyone who wishes to check the kind of data being captured, can do so by auditing just one file: https://github.com/planq-network/status-go/blob/develop/appmetrics/validators.go
 
 ### Transmission and deletion
 Transmission happens over Waku, and as of now, all data will be deleted locally after transmission, however (in future) we might want to keep a copy of the data locally.

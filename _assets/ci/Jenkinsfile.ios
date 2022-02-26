@@ -20,7 +20,7 @@ pipeline {
     timestamps()
     disableConcurrentBuilds()
     /* Go requires a certain directory structure */
-    checkoutToSubdirectory('src/github.com/status-im/status-go')
+    checkoutToSubdirectory('src/github.com/planq-network/status-go')
     /* manage how many builds we keep */
     buildDiscarder(logRotator(
       numToKeepStr: '5',
@@ -34,7 +34,7 @@ pipeline {
     /* Other stuff */
     TARGET = 'ios'
     GOPATH = "${env.WORKSPACE}"
-    REPO   = "${env.WORKSPACE}/src/github.com/status-im/status-go"
+    REPO   = "${env.WORKSPACE}/src/github.com/planq-network/status-go"
     PATH   = "/usr/local/go/bin:${env.PATH}:${env.GOPATH}/bin"
   }
 

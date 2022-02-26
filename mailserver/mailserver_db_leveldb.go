@@ -12,8 +12,8 @@ import (
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/rlp"
 
-	"github.com/status-im/status-go/eth-node/types"
-	waku "github.com/status-im/status-go/waku/common"
+	"github.com/planq-network/status-go/eth-node/types"
+	waku "github.com/planq-network/status-go/waku/common"
 )
 
 type LevelDB struct {

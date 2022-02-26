@@ -7,9 +7,9 @@ import (
 
 	dr "github.com/status-im/doubleratchet"
 
-	"github.com/status-im/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/crypto"
 
-	"github.com/status-im/status-go/protocol/encryption/multidevice"
+	"github.com/planq-network/status-go/protocol/encryption/multidevice"
 )
 
 // RatchetInfo holds the current ratchet state.

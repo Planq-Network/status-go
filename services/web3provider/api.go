@@ -7,10 +7,10 @@ import (
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/log"
 	signercore "github.com/ethereum/go-ethereum/signer/core"
-	"github.com/status-im/status-go/account"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/services/typeddata"
-	"github.com/status-im/status-go/transactions"
+	"github.com/planq-network/status-go/account"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/services/typeddata"
+	"github.com/planq-network/status-go/transactions"
 )
 
 const Web3SendAsyncReadOnly = "web3-send-async-read-only"

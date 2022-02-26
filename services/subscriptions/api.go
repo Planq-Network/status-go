@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/status-im/status-go/rpc"
+	"github.com/planq-network/status-go/rpc"
 )
 
 type API struct {

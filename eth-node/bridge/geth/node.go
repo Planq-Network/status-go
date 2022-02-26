@@ -5,15 +5,15 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/status-im/status-go/waku"
-	"github.com/status-im/status-go/wakuv2"
+	"github.com/planq-network/status-go/waku"
+	"github.com/planq-network/status-go/wakuv2"
 
 	"github.com/ethereum/go-ethereum/node"
 	"github.com/ethereum/go-ethereum/p2p/enode"
 
-	gethens "github.com/status-im/status-go/eth-node/bridge/geth/ens"
-	"github.com/status-im/status-go/eth-node/types"
-	enstypes "github.com/status-im/status-go/eth-node/types/ens"
+	gethens "github.com/planq-network/status-go/eth-node/bridge/geth/ens"
+	"github.com/planq-network/status-go/eth-node/types"
+	enstypes "github.com/planq-network/status-go/eth-node/types/ens"
 )
 
 type gethNodeWrapper struct {

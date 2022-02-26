@@ -6,9 +6,9 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/status-im/status-go/params"
-	"github.com/status-im/status-go/services/wallet/chain"
-	"github.com/status-im/status-go/services/wallet/transfer"
+	"github.com/planq-network/status-go/params"
+	"github.com/planq-network/status-go/services/wallet/chain"
+	"github.com/planq-network/status-go/services/wallet/transfer"
 )
 
 func NewAPI(s *Service) *API {

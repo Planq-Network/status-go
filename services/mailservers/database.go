@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/status-im/status-go/protocol/transport"
+	"github.com/planq-network/status-go/protocol/transport"
 )
 
 type Mailserver struct {

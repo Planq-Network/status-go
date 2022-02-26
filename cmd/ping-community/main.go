@@ -19,19 +19,19 @@ import (
 	"github.com/ethereum/go-ethereum/log"
 
 	"github.com/ethereum/go-ethereum/p2p/enode"
-	"github.com/status-im/status-go/account/generator"
-	"github.com/status-im/status-go/api"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/multiaccounts"
-	"github.com/status-im/status-go/multiaccounts/accounts"
+	"github.com/planq-network/status-go/account/generator"
+	"github.com/planq-network/status-go/api"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/multiaccounts"
+	"github.com/planq-network/status-go/multiaccounts/accounts"
 
-	"github.com/status-im/status-go/logutils"
-	"github.com/status-im/status-go/params"
-	"github.com/status-im/status-go/protocol"
-	"github.com/status-im/status-go/protocol/common"
-	"github.com/status-im/status-go/protocol/identity/alias"
-	"github.com/status-im/status-go/protocol/protobuf"
-	wakuextn "github.com/status-im/status-go/services/wakuext"
+	"github.com/planq-network/status-go/logutils"
+	"github.com/planq-network/status-go/params"
+	"github.com/planq-network/status-go/protocol"
+	"github.com/planq-network/status-go/protocol/common"
+	"github.com/planq-network/status-go/protocol/identity/alias"
+	"github.com/planq-network/status-go/protocol/protobuf"
+	wakuextn "github.com/planq-network/status-go/services/wakuext"
 )
 
 const (

@@ -15,10 +15,10 @@ import (
 	gethkeystore "github.com/ethereum/go-ethereum/accounts/keystore"
 	gethcommon "github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/status-im/status-go/account/generator"
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/eth-node/keystore"
-	"github.com/status-im/status-go/eth-node/types"
+	"github.com/planq-network/status-go/account/generator"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/keystore"
+	"github.com/planq-network/status-go/eth-node/types"
 	"github.com/status-im/status-go/extkeys"
 )
 

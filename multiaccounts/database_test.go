@@ -6,7 +6,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/status-im/status-go/images"
+	"github.com/planq-network/status-go/images"
 
 	"github.com/stretchr/testify/require"
 )

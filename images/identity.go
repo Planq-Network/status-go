@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 
-	"github.com/status-im/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/crypto"
 )
 
 type IdentityImage struct {

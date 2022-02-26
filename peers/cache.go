@@ -8,7 +8,7 @@ import (
 	"github.com/ethereum/go-ethereum/p2p/discv5"
 	"github.com/ethereum/go-ethereum/p2p/enode"
 
-	"github.com/status-im/status-go/db"
+	"github.com/planq-network/status-go/db"
 )
 
 // NewCache returns instance of PeersDatabase

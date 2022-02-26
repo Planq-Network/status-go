@@ -13,7 +13,7 @@ set -e -o pipefail
 
 # Is validate upstream empty ?
 if [ -z "$VALIDATE_UPSTREAM" ]; then
-	VALIDATE_REPO='https://github.com/status-im/status-go'
+	VALIDATE_REPO='https://github.com/planq-network/status-go'
 
 	if [ -z "$VALIDATE_BRANCH" ]; then
 		VALIDATE_BRANCH='develop'

@@ -7,10 +7,10 @@ import (
 	"github.com/ethereum/go-ethereum/common/hexutil"
 
 	signercore "github.com/ethereum/go-ethereum/signer/core"
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/services/typeddata"
-	"github.com/status-im/status-go/transactions"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/services/typeddata"
+	"github.com/planq-network/status-go/transactions"
 )
 
 // signMessage checks the pwd vs the selected account and signs a message

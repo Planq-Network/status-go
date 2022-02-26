@@ -6,9 +6,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	transport2 "github.com/status-im/status-go/protocol/transport"
+	transport2 "github.com/planq-network/status-go/protocol/transport"
 
-	"github.com/status-im/status-go/waku"
+	"github.com/planq-network/status-go/waku"
 
 	"github.com/golang/protobuf/proto"
 
@@ -17,13 +17,13 @@ import (
 
 	datasyncproto "github.com/vacp2p/mvds/protobuf"
 
-	gethbridge "github.com/status-im/status-go/eth-node/bridge/geth"
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/protocol/encryption"
-	"github.com/status-im/status-go/protocol/protobuf"
-	"github.com/status-im/status-go/protocol/sqlite"
-	v1protocol "github.com/status-im/status-go/protocol/v1"
+	gethbridge "github.com/planq-network/status-go/eth-node/bridge/geth"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/protocol/encryption"
+	"github.com/planq-network/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/protocol/sqlite"
+	v1protocol "github.com/planq-network/status-go/protocol/v1"
 )
 
 func TestMessageSenderSuite(t *testing.T) {

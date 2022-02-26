@@ -9,15 +9,15 @@ import (
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/images"
-	"github.com/status-im/status-go/multiaccounts/accounts"
-	"github.com/status-im/status-go/protocol/common"
-	"github.com/status-im/status-go/protocol/communities"
-	"github.com/status-im/status-go/protocol/encryption/multidevice"
-	"github.com/status-im/status-go/protocol/protobuf"
-	v1protocol "github.com/status-im/status-go/protocol/v1"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/images"
+	"github.com/planq-network/status-go/multiaccounts/accounts"
+	"github.com/planq-network/status-go/protocol/common"
+	"github.com/planq-network/status-go/protocol/communities"
+	"github.com/planq-network/status-go/protocol/encryption/multidevice"
+	"github.com/planq-network/status-go/protocol/protobuf"
+	v1protocol "github.com/planq-network/status-go/protocol/v1"
 )
 
 const (

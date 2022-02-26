@@ -14,13 +14,13 @@ import (
 	"github.com/status-im/migrate/v4/database/postgres"
 	bindata "github.com/status-im/migrate/v4/source/go_bindata"
 
-	"github.com/status-im/status-go/mailserver/migrations"
+	"github.com/planq-network/status-go/mailserver/migrations"
 
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/rlp"
 
-	"github.com/status-im/status-go/eth-node/types"
-	waku "github.com/status-im/status-go/waku/common"
+	"github.com/planq-network/status-go/eth-node/types"
+	waku "github.com/planq-network/status-go/waku/common"
 )
 
 type PostgresDB struct {

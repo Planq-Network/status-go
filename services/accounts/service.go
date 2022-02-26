@@ -5,10 +5,10 @@ import (
 	"github.com/ethereum/go-ethereum/p2p"
 	"github.com/ethereum/go-ethereum/rpc"
 
-	"github.com/status-im/status-go/account"
-	"github.com/status-im/status-go/multiaccounts"
-	"github.com/status-im/status-go/multiaccounts/accounts"
-	"github.com/status-im/status-go/params"
+	"github.com/planq-network/status-go/account"
+	"github.com/planq-network/status-go/multiaccounts"
+	"github.com/planq-network/status-go/multiaccounts/accounts"
+	"github.com/planq-network/status-go/params"
 )
 
 // NewService initializes service instance.

@@ -98,7 +98,7 @@ func LinkPreviewWhitelist() []Site {
 			Address:   "github.com",
 			ImageSite: false,
 		},
-		// Medium unfurling is failing - https://github.com/status-im/status-go/issues/2192
+		// Medium unfurling is failing - https://github.com/planq-network/status-go/issues/2192
 		//
 		// Site{
 		// 	Title:     "Medium",

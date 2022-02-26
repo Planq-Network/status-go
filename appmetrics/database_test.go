@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/status-im/status-go/appdatabase"
+	"github.com/planq-network/status-go/appdatabase"
 
 	"github.com/stretchr/testify/require"
 )

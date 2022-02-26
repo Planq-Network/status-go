@@ -20,7 +20,7 @@ pipeline {
     timestamps()
     disableConcurrentBuilds()
     /* Go requires a certain directory structure */
-    checkoutToSubdirectory('src/github.com/status-im/status-go')
+    checkoutToSubdirectory('src/github.com/planq-network/status-go')
     /* manage how many builds we keep */
     buildDiscarder(logRotator(
       numToKeepStr: '5',
@@ -33,7 +33,7 @@ pipeline {
     CGO_ENABLED = "1"
     /* Other stuff */
     TARGET = 'android'
-    REPO   = "${env.WORKSPACE}/src/github.com/status-im/status-go"
+    REPO   = "${env.WORKSPACE}/src/github.com/planq-network/status-go"
     GOPATH = "${env.WORKSPACE}"
     PATH   = "/usr/local/go/bin:${env.PATH}:${env.GOPATH}/bin"
     /* Android SDK */

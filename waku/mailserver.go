@@ -23,7 +23,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/status-im/status-go/waku/common"
+	"github.com/planq-network/status-go/waku/common"
 
 	gethcommon "github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/p2p/enode"

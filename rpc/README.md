@@ -1,9 +1,9 @@
-# rpc [![GoDoc](https://godoc.org/github.com/status-im/status-go/rpc?status.png)](https://godoc.org/github.com/status-im/status-go/rpc)
+# rpc [![GoDoc](https://godoc.org/github.com/planq-network/status-go/rpc?status.png)](https://godoc.org/github.com/planq-network/status-go/rpc)
 Package rpc - JSON-RPC client with custom routing.
 
 Download:
 ```shell
-go get github.com/status-im/status-go/rpc
+go get github.com/planq-network/status-go/rpc
 ```
 
 * * *

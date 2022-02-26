@@ -8,9 +8,9 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/status-im/status-go/appdatabase"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/protocol/transport"
+	"github.com/planq-network/status-go/appdatabase"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/protocol/transport"
 )
 
 func setupTestDB(t *testing.T) (*Database, func()) {

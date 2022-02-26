@@ -11,7 +11,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/status-im/status-go/services/wallet/bigint"
+	"github.com/planq-network/status-go/services/wallet/bigint"
 )
 
 // DBHeader fields from header that are stored in database.

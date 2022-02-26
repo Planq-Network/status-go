@@ -30,7 +30,7 @@ import (
 	"github.com/status-im/go-waku/waku/v2/protocol/pb"
 	"github.com/status-im/go-waku/waku/v2/utils"
 
-	"github.com/status-im/status-go/wakuv2/common"
+	"github.com/planq-network/status-go/wakuv2/common"
 
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/crypto"

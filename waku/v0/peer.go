@@ -20,9 +20,9 @@ import (
 	"github.com/ethereum/go-ethereum/p2p"
 	"github.com/ethereum/go-ethereum/p2p/enode"
 	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/status-im/status-go/eth-node/types"
+	"github.com/planq-network/status-go/eth-node/types"
 
-	"github.com/status-im/status-go/waku/common"
+	"github.com/planq-network/status-go/waku/common"
 )
 
 // Peer is the implementation of the Peer interface and represents a remote Waku client with which the local host Waku

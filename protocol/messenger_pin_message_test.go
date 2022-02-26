@@ -8,12 +8,12 @@ import (
 	"github.com/stretchr/testify/suite"
 	"go.uber.org/zap"
 
-	gethbridge "github.com/status-im/status-go/eth-node/bridge/geth"
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/protocol/common"
-	"github.com/status-im/status-go/protocol/tt"
-	"github.com/status-im/status-go/waku"
+	gethbridge "github.com/planq-network/status-go/eth-node/bridge/geth"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/protocol/common"
+	"github.com/planq-network/status-go/protocol/tt"
+	"github.com/planq-network/status-go/waku"
 )
 
 func TestMessengerPinMessageSuite(t *testing.T) {

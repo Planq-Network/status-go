@@ -12,8 +12,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/status-im/status-go/appdatabase"
-	"github.com/status-im/status-go/params"
+	"github.com/planq-network/status-go/appdatabase"
+	"github.com/planq-network/status-go/params"
 
 	gethrpc "github.com/ethereum/go-ethereum/rpc"
 )

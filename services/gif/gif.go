@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/status-im/status-go/multiaccounts/accounts"
+	"github.com/planq-network/status-go/multiaccounts/accounts"
 )
 
 type Gif struct {

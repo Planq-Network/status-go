@@ -7,9 +7,9 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/status-im/status-go/protocol/common"
-	"github.com/status-im/status-go/protocol/protobuf"
-	"github.com/status-im/status-go/signal"
+	"github.com/planq-network/status-go/protocol/common"
+	"github.com/planq-network/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/signal"
 )
 
 // autoMessageInterval is how often we should send a message

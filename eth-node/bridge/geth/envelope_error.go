@@ -1,9 +1,9 @@
 package gethbridge
 
 import (
-	"github.com/status-im/status-go/eth-node/types"
-	waku "github.com/status-im/status-go/waku/common"
-	wakuv2 "github.com/status-im/status-go/wakuv2/common"
+	"github.com/planq-network/status-go/eth-node/types"
+	waku "github.com/planq-network/status-go/waku/common"
+	wakuv2 "github.com/planq-network/status-go/wakuv2/common"
 )
 
 // NewWakuEnvelopeErrorWrapper returns a types.EnvelopeError object that mimics Geth's EnvelopeError

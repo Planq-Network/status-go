@@ -5,8 +5,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/log"
 
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/services/ext/mailservers"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/services/ext/mailservers"
 )
 
 // EnvelopeState in local tracker

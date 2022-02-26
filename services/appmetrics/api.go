@@ -6,7 +6,7 @@ import (
 	"github.com/pborman/uuid"
 
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/status-im/status-go/appmetrics"
+	"github.com/planq-network/status-go/appmetrics"
 )
 
 func NewAPI(db *appmetrics.Database) *API {

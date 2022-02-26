@@ -3,10 +3,10 @@ package appdatabase
 import (
 	"database/sql"
 
-	"github.com/status-im/status-go/appdatabase/migrations"
-	migrationsprevnodecfg "github.com/status-im/status-go/appdatabase/migrationsprevnodecfg"
-	"github.com/status-im/status-go/nodecfg"
-	"github.com/status-im/status-go/sqlite"
+	"github.com/planq-network/status-go/appdatabase/migrations"
+	migrationsprevnodecfg "github.com/planq-network/status-go/appdatabase/migrationsprevnodecfg"
+	"github.com/planq-network/status-go/nodecfg"
+	"github.com/planq-network/status-go/sqlite"
 )
 
 const nodeCfgMigrationDate = 1640111208

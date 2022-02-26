@@ -4,8 +4,8 @@ import (
 	"crypto/ecdsa"
 	"errors"
 
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/protocol/common"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/protocol/common"
 )
 
 // The activity center is a place where we store incoming notifications before

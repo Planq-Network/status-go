@@ -34,10 +34,10 @@ func SubscribeServerEvents(ctx context.Context, node *node.Node) error {
 				// We start a goroutine here because updateNodeMetrics
 				// is calling a method on the p2p server, which
 				// blocks until the server is available:
-				// https://github.com/status-im/status-go/blob/e60f425b45d00d3880b42fdd77b460ec465a9f55/vendor/github.com/ethereum/go-ethereum/p2p/server.go#L301
-				// https://github.com/status-im/status-go/blob/e60f425b45d00d3880b42fdd77b460ec465a9f55/vendor/github.com/ethereum/go-ethereum/p2p/server.go#L746
+				// https://github.com/planq-network/status-go/blob/e60f425b45d00d3880b42fdd77b460ec465a9f55/vendor/github.com/ethereum/go-ethereum/p2p/server.go#L301
+				// https://github.com/planq-network/status-go/blob/e60f425b45d00d3880b42fdd77b460ec465a9f55/vendor/github.com/ethereum/go-ethereum/p2p/server.go#L746
 				// If there's back-pressure on the peer event feed
-				// https://github.com/status-im/status-go/blob/e60f425b45d00d3880b42fdd77b460ec465a9f55/vendor/github.com/ethereum/go-ethereum/p2p/server.go#L783
+				// https://github.com/planq-network/status-go/blob/e60f425b45d00d3880b42fdd77b460ec465a9f55/vendor/github.com/ethereum/go-ethereum/p2p/server.go#L783
 				// The event channel above might become full while updateNodeMetrics
 				// is called, which means is never consumed, the server blocks on publishing on
 				// it, and the two will deadlock (server waits for the channel above to be consumed,

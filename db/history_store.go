@@ -5,7 +5,7 @@ import (
 
 	"github.com/syndtr/goleveldb/leveldb/errors"
 
-	"github.com/status-im/status-go/eth-node/types"
+	"github.com/planq-network/status-go/eth-node/types"
 )
 
 // NewHistoryStore returns HistoryStore instance.

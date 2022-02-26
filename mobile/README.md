@@ -19,14 +19,14 @@ To manually build library, run following commands:
 ### iOS
 
 ```
-gomobile bind -v -target=ios -ldflags="-s -w" github.com/status-im/status-go/mobile
+gomobile bind -v -target=ios -ldflags="-s -w" github.com/planq-network/status-go/mobile
 ```
 This will produce `Statusgo.framework` file in the current directory, which can be used in iOS project.
 
 ### Android
 
 ```
-gomobile bind -v -target=android -ldflags="-s -w" github.com/status-im/status-go/mobile
+gomobile bind -v -target=android -ldflags="-s -w" github.com/planq-network/status-go/mobile
 ```
 This will generate `Statusgo.aar` file in the current dir.
 

@@ -3,12 +3,12 @@ package protocol
 import (
 	"crypto/ecdsa"
 
-	"github.com/status-im/status-go/eth-node/crypto"
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/images"
-	"github.com/status-im/status-go/multiaccounts/accounts"
-	"github.com/status-im/status-go/protocol/identity/alias"
-	"github.com/status-im/status-go/protocol/identity/identicon"
+	"github.com/planq-network/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/images"
+	"github.com/planq-network/status-go/multiaccounts/accounts"
+	"github.com/planq-network/status-go/protocol/identity/alias"
+	"github.com/planq-network/status-go/protocol/identity/identicon"
 )
 
 // ContactDeviceInfo is a struct containing information about a particular device owned by a contact

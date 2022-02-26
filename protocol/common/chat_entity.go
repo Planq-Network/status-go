@@ -5,7 +5,7 @@ import (
 
 	"github.com/golang/protobuf/proto"
 
-	"github.com/status-im/status-go/protocol/protobuf"
+	"github.com/planq-network/status-go/protocol/protobuf"
 )
 
 // ChatEntity is anything that is sendable in a chat.

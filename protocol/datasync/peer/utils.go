@@ -5,7 +5,7 @@ import (
 
 	"github.com/vacp2p/mvds/state"
 
-	"github.com/status-im/status-go/eth-node/crypto"
+	"github.com/planq-network/status-go/eth-node/crypto"
 )
 
 func PublicKeyToPeerID(k ecdsa.PublicKey) state.PeerID {

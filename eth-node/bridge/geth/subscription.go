@@ -3,7 +3,7 @@ package gethbridge
 import (
 	"github.com/ethereum/go-ethereum/event"
 
-	"github.com/status-im/status-go/eth-node/types"
+	"github.com/planq-network/status-go/eth-node/types"
 )
 
 type gethSubscriptionWrapper struct {

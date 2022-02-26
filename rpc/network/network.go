@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"database/sql"
 
-	"github.com/status-im/status-go/params"
+	"github.com/planq-network/status-go/params"
 )
 
 const baseQuery = "SELECT chain_id, chain_name, rpc_url, block_explorer_url, icon_url, native_currency_name, native_currency_symbol, native_currency_decimals, is_test, layer, enabled FROM networks"

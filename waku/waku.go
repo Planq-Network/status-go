@@ -43,11 +43,11 @@ import (
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/ethereum/go-ethereum/rpc"
 
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/logutils"
-	"github.com/status-im/status-go/waku/common"
-	v0 "github.com/status-im/status-go/waku/v0"
-	v1 "github.com/status-im/status-go/waku/v1"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/logutils"
+	"github.com/planq-network/status-go/waku/common"
+	v0 "github.com/planq-network/status-go/waku/v0"
+	v1 "github.com/planq-network/status-go/waku/v1"
 )
 
 const messageQueueLimit = 1024

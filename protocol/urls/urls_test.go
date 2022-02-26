@@ -112,7 +112,7 @@ func TestStatusLinkPreviewData(t *testing.T) {
 	require.Equal(t, statusSecurityAudit.ThumbnailURL, previewData.ThumbnailURL)
 }
 
-// Medium unfurling is failing - https://github.com/status-im/status-go/issues/2192
+// Medium unfurling is failing - https://github.com/planq-network/status-go/issues/2192
 //
 // func TestMediumLinkPreviewData(t *testing.T) {
 

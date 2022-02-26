@@ -13,8 +13,8 @@ import (
 	"github.com/ethereum/go-ethereum/p2p"
 	"github.com/ethereum/go-ethereum/p2p/enode"
 
-	"github.com/status-im/status-go/eth-node/types"
-	"github.com/status-im/status-go/t/utils"
+	"github.com/planq-network/status-go/eth-node/types"
+	"github.com/planq-network/status-go/t/utils"
 )
 
 type fakePeerEvents struct {
