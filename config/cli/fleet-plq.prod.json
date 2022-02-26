@@ -1,6 +1,6 @@
 {
   "Rendezvous": false,
-  "NoDiscovery": false,
+  "NoDiscovery": true,
   "ClusterConfig": {
     "Enabled": true,
     "Fleet": "plq.prod",

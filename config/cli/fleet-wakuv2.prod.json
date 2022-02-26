@@ -4,10 +4,18 @@
   "ClusterConfig": {
     "Enabled": true,
     "Fleet": "wakuv2.prod",
-    "BootNodes": [],
-    "TrustedMailServers": [],
-    "PushNotificationsServers": [],
-    "StaticNodes": [],
+    "BootNodes": [
+      "enode://6868833ecc430f69c4ddc48cb6a9fa41d62eaec4eb516dc30de0a85c5b56c53643e86d9e82914ed9e3ad9f4cf165e7ad1fc146f51955576748c3234a4842885c@91.134.167.139:30401"
+    ],
+    "TrustedMailServers": [
+      "enode://1c386e1e329d4b2ff8732eea05146255539834de2cef9c4bd18b86361d91a30a515bedc9f23f488cce01f2f9e0606a5b6b127cff776dedd9734e6b884cec7887@15.235.45.219:30303"
+    ],
+    "PushNotificationsServers": [
+      "041c386e1e329d4b2ff8732eea05146255539834de2cef9c4bd18b86361d91a30a515bedc9f23f488cce01f2f9e0606a5b6b127cff776dedd9734e6b884cec7887"
+    ],
+    "StaticNodes": [
+      "enode://1c386e1e329d4b2ff8732eea05146255539834de2cef9c4bd18b86361d91a30a515bedc9f23f488cce01f2f9e0606a5b6b127cff776dedd9734e6b884cec7887@15.235.45.219:30303"
+    ],
     "RendezvousNodes": [],
     "WakuNodes": [
       "/ip4/15.235.45.219/tcp/60000/p2p/16Uiu2HAmTXthrkQLfBSZHziict5JBJEpTvWcY6AYNWeq5RMYN3ct"
